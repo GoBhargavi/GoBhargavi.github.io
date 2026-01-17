@@ -8,20 +8,6 @@ const Timeline = () => {
     return (
         <section id="experience" className="py-24 relative bg-obsidian-800/50">
             <div className="max-w-7xl mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-16"
-                >
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-gold-glow/10">
-                            <Briefcase className="text-gold-glow" size={24} />
-                        </div>
-                        <h2 className="text-4xl font-bold font-outfit text-white">Experience</h2>
-                    </div>
-                </motion.div>
-
                 <div className="relative">
                     {/* Vertical Line */}
                     <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold-glow/50 via-gold-shimmer/50 to-transparent md:-translate-x-1/2" />
