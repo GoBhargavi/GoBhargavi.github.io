@@ -8,13 +8,13 @@ const Blog = () => {
         {
             title: "Substack",
             description: "Deep dives into AI architecture, system design, and industry trends.",
-            url: "https://anudeepsri.substack.com/",
+            url: "https://bhargavi.substack.com/",
             publisher: "Substack"
         },
         {
             title: "Medium",
             description: "Technical articles, tutorials, and thought leadership on Generative AI.",
-            url: "https://medium.com/@anudeepsri",
+            url: "https://medium.com/@bhargavi",
             publisher: "Medium"
         }
     ];

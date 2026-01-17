@@ -81,10 +81,10 @@ const Hero = () => {
                         transition={{ delay: 0.8, duration: 0.8 }}
                         className="text-xl md:text-2xl text-platinum-300 max-w-4xl mx-auto mb-12 leading-relaxed font-light"
                     >
-                        Building scalable AI-powered applications and enterprise-grade web solutions 
-                        with <span className="text-gold-glow font-semibold">React</span>, 
-                        <span className="text-rose-400 font-semibold"> TypeScript</span>, and 
-                        <span className="text-emerald-400 font-semibold"> Next.js</span>
+                        Senior Full-Stack Engineer transforming complex business challenges into 
+                        <span className="text-gold-glow font-semibold"> scalable AI solutions</span> and 
+                        <span className="text-rose-400 font-semibold"> enterprise-grade applications</span> 
+                        that drive measurable business impact and user delight.
                     </motion.p>
 
                     {/* Premium CTA Buttons */}

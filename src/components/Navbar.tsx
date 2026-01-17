@@ -35,7 +35,7 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
                     <a href="#" className="text-xl font-bold font-outfit text-foreground">
                         <span className="text-gold-glow">{'<'}</span>
-                        Anudeep
+                        Bhargavi
                         <span className="text-gold-shimmer">{' />'}</span>
                     </a>
 
