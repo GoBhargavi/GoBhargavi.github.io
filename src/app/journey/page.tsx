@@ -2,6 +2,7 @@
 import { Suspense } from 'react';
 import Timeline from '@/components/Timeline';
 import Education from '@/components/Education';
+import Experience from '@/components/Experience';
 import { Loader } from 'lucide-react';
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function JourneyPage() {
                     <Loader className="animate-spin text-violet-glow" size={48} />
                 </div>
             }>
+                <Experience />
                 <Timeline />
                 <Education />
             </Suspense>

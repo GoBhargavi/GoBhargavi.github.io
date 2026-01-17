@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="py-12 border-t border-foreground/10 bg-background">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-center md:text-left">
-                    <h3 className="text-xl font-bold font-outfit text-white mb-2">Anudeep Sri Bathina</h3>
+                    <h3 className="text-xl font-bold font-outfit text-white mb-2">Bhargavi Govardhanam</h3>
                     <p className="text-gray-500 text-sm">
                         © {new Date().getFullYear()} All rights reserved. Built with Next.js 15 & Framer Motion.
                     </p>

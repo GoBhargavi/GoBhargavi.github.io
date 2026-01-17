@@ -119,10 +119,10 @@
 
 @keyframes glow {
     from {
-        box-shadow: 0 0 10px -10px theme('colors.violet.glow');
+        box-shadow: 0 0 10px -10px theme('colors.gold.glow');
     }
 
     to {
-        box-shadow: 0 0 20px 5px theme('colors.violet.glow');
+        box-shadow: 0 0 20px 5px theme('colors.gold.glow');
     }
 }
