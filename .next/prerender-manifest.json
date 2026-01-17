@@ -1,30 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/blog": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/journey": {
       "experimentalBypassFor": [
         {
@@ -77,8 +53,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "f0b3c0b843bdeaf655209d2492ee5aee",
-    "previewModeSigningKey": "5e21a2916130349783ac9662a37d7e27d0d36e38c1ff4796d114163d9ed69926",
-    "previewModeEncryptionKey": "f368a9c3e9de592f3399f7d22f0ab3fa4ce83b1f136b1ea5b8ec467e462a25d1"
+    "previewModeId": "ac5c55d22bc965116ebff64a80d285c2",
+    "previewModeSigningKey": "f93725088ccd6a509ff6b1fc786460868c09e4ef7c1adaa41b139403a9e7da26",
+    "previewModeEncryptionKey": "1305fdedf0496bb3564205b66e3f9f14d6c5f9dd42fcb6d0fc983ff70585537b"
   }
 }

@@ -31,15 +31,15 @@ const Skills = () => {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-glow/10 border border-gold-glow/20 mb-6">
                         <Code2 className="text-gold-glow" size={18} />
-                        <span className="text-sm font-medium text-gold-glow">Expertise</span>
+                        <span className="text-sm font-medium text-gold-glow">AI & Full-Stack Expertise</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-glow to-gold-shimmer">
-                            Technical Arsenal
+                            AI Engineering Stack
                         </span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        A curated stack of technologies I use to build scalable AI systems and data platforms.
+                        Cutting-edge AI technologies and full-stack expertise for building intelligent, production-ready systems.
                     </p>
                 </motion.div>
 

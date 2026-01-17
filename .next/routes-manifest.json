@@ -28,12 +28,6 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
-      "page": "/blog",
-      "regex": "^/blog(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog(?:/)?$"
-    },
-    {
       "page": "/journey",
       "regex": "^/journey(?:/)?$",
       "routeKeys": {},

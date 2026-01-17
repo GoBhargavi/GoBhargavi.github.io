@@ -40,7 +40,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-gold-glow/20 rounded-full blur-md animate-ping" />
                         </div>
                         <span className="text-sm font-semibold bg-gradient-to-r from-rose-400 to-emerald-400 bg-clip-text text-transparent">
-                            Senior Full-Stack Engineer | 11+ Years Experience
+                            Senior Full-Stack AI Engineer | 11+ Years Building Intelligent Solutions
                         </span>
                     </motion.div>
 
@@ -69,7 +69,7 @@ const Hero = () => {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-platinum-500/10 to-gold-glow/10 border border-platinum-500/20 backdrop-blur-sm">
                             <Briefcase className="text-gold-glow w-5 h-5" />
                             <span className="text-xl font-semibold text-platinum-200">
-                                {resumeData.personalInfo.title}
+                                Senior Full-Stack AI Engineer & Solution Architect
                             </span>
                         </div>
                     </motion.div>
@@ -81,10 +81,10 @@ const Hero = () => {
                         transition={{ delay: 0.8, duration: 0.8 }}
                         className="text-xl md:text-2xl text-platinum-300 max-w-4xl mx-auto mb-12 leading-relaxed font-light"
                     >
-                        Senior Full-Stack Engineer transforming complex business challenges into 
-                        <span className="text-gold-glow font-semibold"> scalable AI solutions</span> and 
-                        <span className="text-rose-400 font-semibold"> enterprise-grade applications</span> 
-                        that drive measurable business impact and user delight.
+                        Senior Full-Stack AI Engineer architecting intelligent systems that transform 
+                        <span className="text-gold-glow font-semibold"> complex data into actionable insights</span> and 
+                        <span className="text-rose-400 font-semibold"> scalable AI-powered solutions</span> 
+                        for enterprise clients worldwide.
                     </motion.p>
 
                     {/* Premium CTA Buttons */}
