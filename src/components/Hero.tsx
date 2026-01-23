@@ -65,6 +65,9 @@ const Hero = () => {
                                 Specializing in Angular, React, and Healthcare Innovation.
                             </span>
                         </div>
+                        <div className="mt-6 text-platinum-400 font-outfit text-sm uppercase tracking-widest font-semibold">
+                            4 Public Repositories <span className="text-gold-400 mx-2">•</span> 2 Live Healthcare Apps <span className="text-gold-400 mx-2">•</span> 1 Master's Thesis
+                        </div>
                     </motion.div>
 
                     {/* Premium Summary */}

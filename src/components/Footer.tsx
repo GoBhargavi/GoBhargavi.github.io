@@ -38,6 +38,15 @@ const Footer = () => {
                                     <social.icon size={22} />
                                 </a>
                             ))}
+                            <a
+                                href="https://github.com/GoBhargavi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-obsidian-800 border border-white/10 text-white hover:bg-violet-600 hover:border-violet-400 transition-all duration-300 group"
+                            >
+                                <Github size={20} className="group-hover:rotate-12 transition-transform" />
+                                <span className="font-bold font-outfit text-sm">Check out my code</span>
+                            </a>
                         </div>
                         <div className="text-platinum-600 text-[10px] font-bold uppercase tracking-[0.2em] font-outfit">
                             &copy; {new Date().getFullYear()} Bhargavi. Built with Precision.
