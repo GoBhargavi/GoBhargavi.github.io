@@ -19,6 +19,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        outfit: ["var(--font-outfit)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -53,8 +57,9 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Premium Portfolio Colors
+        // Premium AI Portfolio Palette
         obsidian: {
+          950: "#050505",
           900: "#0a0a0a",
           800: "#121212",
           700: "#1e1e1e",
@@ -69,31 +74,12 @@ const config: Config = {
           600: "#495057",
           700: "#343a40",
           800: "#212529",
-          900: "#000000",
+          900: "#111111",
         },
-        rose: {
-          50: "#fff1f2",
-          100: "#ffe4e6",
-          200: "#fecdd3",
-          300: "#fda4af",
-          400: "#fb7185",
-          500: "#f43f5e",
-          600: "#e11d48",
-          700: "#be123c",
-          800: "#9f1239",
-          900: "#881337",
-        },
-        emerald: {
-          50: "#ecfdf5",
-          100: "#d1fae5",
-          200: "#a7f3d0",
-          300: "#6ee7b7",
-          400: "#34d399",
-          500: "#10b981",
-          600: "#059669",
-          700: "#047857",
-          800: "#065f46",
-          900: "#064e3b",
+        violet: {
+          400: "#a78bfa",
+          500: "#8b5cf6",
+          600: "#7c3aed",
         },
         gold: {
           50: "#fffbeb",
@@ -118,28 +104,38 @@ const config: Config = {
         xl: "1rem",
         "2xl": "1.5rem",
         "3xl": "2rem",
+        "4xl": "2.5rem", // Super-elliptical
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #FFD70033 0deg, #FBF5D433 180deg, #FFD70033 360deg)',
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
       },
       keyframes: {
         "fade-up": {
           "0%": {
             opacity: "0",
-            transform: "translateY(10px)",
-          },
-          "80%": {
-            opacity: "0.6",
+            transform: "translateY(20px)",
           },
           "100%": {
             opacity: "1",
             transform: "translateY(0px)",
           },
         },
+        "shimmer": {
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
       },
       animation: {
-        "fade-up": "fade-up 0.3s ease-out",
+        "fade-up": "fade-up 0.5s ease-out forwards",
+        "shimmer": "shimmer 2s linear infinite",
       },
     },
   },

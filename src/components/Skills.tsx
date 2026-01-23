@@ -27,19 +27,17 @@ const Skills = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-16 text-center"
+                    className="mb-20 text-center"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-glow/10 border border-gold-glow/20 mb-6">
-                        <Code2 className="text-gold-glow" size={18} />
-                        <span className="text-sm font-medium text-gold-glow">AI & Full-Stack Expertise</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8">
+                        <Code2 className="text-gold-400" size={18} />
+                        <span className="text-xs font-bold uppercase tracking-widest text-platinum-400">Expertise</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-glow to-gold-shimmer">
-                            AI Engineering Stack
-                        </span>
+                    <h2 className="text-5xl md:text-7xl font-black font-outfit mb-8 tracking-tighter">
+                        <span className="text-gradient">AI Engineering Stack</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Cutting-edge AI technologies and full-stack expertise for building intelligent, production-ready systems.
+                    <p className="text-xl text-platinum-400 max-w-2xl mx-auto font-light leading-relaxed">
+                        Cutting-edge AI technologies and full-stack expertise for building intelligent systems.
                     </p>
                 </motion.div>
 
@@ -49,45 +47,41 @@ const Skills = () => {
                         return (
                             <motion.div
                                 key={category.name}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: catIndex * 0.1 }}
-                                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-gold-glow/30 transition-all"
+                                transition={{ delay: catIndex * 0.1, duration: 0.8 }}
+                                className="glass-card p-10 group"
                             >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="p-2 rounded-lg bg-gold-glow/10">
-                                        <CategoryIcon className="text-gold-glow" size={24} />
+                                <div className="flex items-center gap-5 mb-10">
+                                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 group-hover:border-gold-500/50 transition-colors duration-500">
+                                        <CategoryIcon className="text-gold-400" size={32} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-white">{category.name}</h3>
-                                        <p className="text-sm text-gray-500">{category.description}</p>
+                                        <h3 className="text-2xl font-bold text-white font-outfit mb-1">{category.name}</h3>
+                                        <p className="text-sm text-platinum-500 font-inter">{category.description}</p>
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-3 gap-3">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                     {category.skills.map((skill, index) => {
                                         const Icon = getIconComponent(skill.icon);
                                         return (
                                             <motion.div
                                                 key={skill.name}
-                                                initial={{ opacity: 0, scale: 0.9 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: index * 0.05 }}
-                                                whileHover={{ scale: 1.05 }}
-                                                className="group relative p-4 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 flex flex-col items-center justify-center gap-2 cursor-default"
+                                                whileHover={{ y: -5, scale: 1.02 }}
+                                                className="group relative p-4 bg-white/5 border border-white/5 rounded-2xl transition-all duration-300 flex flex-col items-center justify-center gap-3 hover:bg-white/10 hover:border-white/10"
                                             >
                                                 <div
-                                                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                                                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"
                                                     style={{ backgroundColor: skill.color }}
                                                 />
                                                 {Icon && (
-                                                    <div className="text-2xl">
+                                                    <div className="text-3xl filter transition-all duration-300">
                                                         <Icon style={{ color: skill.color }} />
                                                     </div>
                                                 )}
-                                                <span className="text-xs font-medium text-gray-400 group-hover:text-white transition-colors text-center">
+                                                <span className="text-[10px] font-bold text-platinum-400 group-hover:text-white transition-colors text-center uppercase tracking-widest">
                                                     {skill.name}
                                                 </span>
                                             </motion.div>

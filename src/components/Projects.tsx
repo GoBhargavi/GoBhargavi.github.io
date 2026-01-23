@@ -40,19 +40,17 @@ const Projects = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-16 text-center"
+                    className="mb-20 text-center"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-glow/10 border border-gold-glow/20 mb-6">
-                        <Code2 className="text-gold-glow" size={18} />
-                        <span className="text-sm font-medium text-gold-glow">Portfolio</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8">
+                        <Code2 className="text-violet-400" size={18} />
+                        <span className="text-xs font-bold uppercase tracking-widest text-platinum-400">Portfolio</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-glow to-gold-shimmer">
-                            Featured Projects
-                        </span>
+                    <h2 className="text-5xl md:text-7xl font-black font-outfit mb-8 tracking-tighter">
+                        <span className="text-gradient">Featured Projects</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        A selection of my recent work spanning AI systems, enterprise applications, and user-centric platforms.
+                    <p className="text-xl text-platinum-400 max-w-2xl mx-auto font-light leading-relaxed">
+                        Engineering intelligent solutions that scale, from production AI systems to high-performance enterprise platforms.
                     </p>
                 </motion.div>
 
@@ -64,25 +62,24 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`relative group bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-gold-glow/30 transition-all ${
-                                project.featured ? 'ring-2 ring-gold-glow/20' : ''
-                            }`}
+                            className={`relative group bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-gold-glow/30 transition-all ${project.featured ? 'ring-2 ring-gold-glow/20' : ''
+                                }`}
                         >
                             {project.featured && (
                                 <div className="absolute -top-3 -right-3 px-3 py-1 bg-gold-glow text-black text-xs font-bold rounded-full">
                                     Featured
                                 </div>
                             )}
-                            
+
                             <div className="flex flex-col h-full">
                                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-glow transition-colors">
                                     {project.title}
                                 </h3>
-                                
+
                                 <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">
                                     {project.description}
                                 </p>
-                                
+
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.technologies.map((tech, techIndex) => (
                                         <span
@@ -93,7 +90,7 @@ const Projects = () => {
                                         </span>
                                     ))}
                                 </div>
-                                
+
                                 <div className="flex gap-3">
                                     {project.githubUrl && (
                                         <a
@@ -122,7 +119,7 @@ const Projects = () => {
                         </motion.div>
                     ))}
                 </div>
-                
+
                 <div className="text-center mt-12">
                     <motion.a
                         href="#contact"

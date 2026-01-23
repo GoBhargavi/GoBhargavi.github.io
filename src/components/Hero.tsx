@@ -6,41 +6,34 @@ import resumeData from '@/data/resumeData.json';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
             {/* Premium Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-obsidian-900 via-obsidian-800 to-obsidian-900" />
-            
-            {/* Animated Background Orbs */}
-            <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-rose-500/20 to-emerald-500/20 rounded-full blur-[150px] pointer-events-none animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-gold-glow/20 to-platinum-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse delay-1000" />
-            
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 opacity-20">
-                <div className="w-full h-full" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-                }} />
-            </div>
+            <div className="absolute inset-0 bg-obsidian-950" />
+
+            {/* Animated Background Orbs - Refined */}
+            <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-violet-600/10 rounded-full blur-[160px] pointer-events-none animate-pulse" />
+            <div className="absolute bottom-1/4 -right-1/4 w-[700px] h-[700px] bg-gold-600/10 rounded-full blur-[140px] pointer-events-none animate-pulse delay-1000" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center"
                 >
                     {/* Premium Badge */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-rose-500/10 to-emerald-500/10 border border-rose-500/20 backdrop-blur-sm mb-8 group hover:border-gold-glow/40 transition-all duration-300"
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                        className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass-panel mb-10 group hover:border-violet-500/40 transition-all duration-500 cursor-default"
                     >
                         <div className="relative">
-                            <Star className="text-gold-glow w-5 h-5 animate-pulse" />
-                            <div className="absolute inset-0 bg-gold-glow/20 rounded-full blur-md animate-ping" />
+                            <Star className="text-gold-400 w-4 h-4 animate-pulse" />
+                            <div className="absolute inset-0 bg-gold-400/20 rounded-full blur-md animate-ping" />
                         </div>
-                        <span className="text-sm font-semibold bg-gradient-to-r from-rose-400 to-emerald-400 bg-clip-text text-transparent">
-                            Senior Full-Stack AI Engineer | 11+ Years Building Intelligent Solutions
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-platinum-200">
+                            Senior Full-Stack AI Engineer
                         </span>
                     </motion.div>
 
@@ -48,13 +41,13 @@ const Hero = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.8 }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-black font-outfit tracking-tight mb-6"
+                        transition={{ delay: 0.4, duration: 1 }}
+                        className="text-7xl md:text-9xl font-black font-outfit tracking-tighter mb-8"
                     >
-                        <span className="block bg-gradient-to-r from-white via-platinum-200 to-gold-glow bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                        <span className="block text-white mb-2">
                             {resumeData.personalInfo.name.split(' ')[0]}
                         </span>
-                        <span className="block bg-gradient-to-r from-gold-glow via-rose-400 to-emerald-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                        <span className="block text-gradient">
                             {resumeData.personalInfo.name.split(' ').slice(1).join(' ')}
                         </span>
                     </motion.h1>
@@ -63,13 +56,13 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6, duration: 0.8 }}
-                        className="mb-8"
+                        transition={{ delay: 0.6, duration: 1 }}
+                        className="mb-10"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-platinum-500/10 to-gold-glow/10 border border-platinum-500/20 backdrop-blur-sm">
-                            <Briefcase className="text-gold-glow w-5 h-5" />
-                            <span className="text-xl font-semibold text-platinum-200">
-                                Senior Full-Stack AI Engineer & Solution Architect
+                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <Briefcase className="text-violet-400 w-5 h-5" />
+                            <span className="text-lg font-medium text-platinum-200 font-outfit uppercase tracking-wider">
+                                Solution Architect & AI Strategist
                             </span>
                         </div>
                     </motion.div>
@@ -78,40 +71,38 @@ const Hero = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.8 }}
-                        className="text-xl md:text-2xl text-platinum-300 max-w-4xl mx-auto mb-12 leading-relaxed font-light"
+                        transition={{ delay: 0.8, duration: 1 }}
+                        className="text-xl md:text-2xl text-platinum-400 max-w-3xl mx-auto mb-14 leading-relaxed font-light"
                     >
-                        Senior Full-Stack AI Engineer architecting intelligent systems that transform 
-                        <span className="text-gold-glow font-semibold"> complex data into actionable insights</span> and 
-                        <span className="text-rose-400 font-semibold"> scalable AI-powered solutions</span> 
-                        for enterprise clients worldwide.
+                        Architecting intelligent systems that transform
+                        <span className="text-white font-medium"> complex data into actionable insights</span> and
+                        <span className="text-violet-400 font-medium"> scalable AI solutions</span>.
                     </motion.p>
 
                     {/* Premium CTA Buttons */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 0.8 }}
-                        className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-12"
+                        transition={{ delay: 1, duration: 1 }}
+                        className="flex flex-col sm:flex-row gap-8 items-center justify-center mb-16"
                     >
                         <motion.a
                             href="#projects"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group relative px-8 py-4 bg-gradient-to-r from-rose-500 to-emerald-500 text-white font-bold rounded-full shadow-2xl hover:shadow-rose-500/25 transition-all duration-300 flex items-center gap-3 text-lg"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group relative px-10 py-4 bg-white text-obsidian-950 font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                         >
-                            <span className="relative z-10">View My Work</span>
+                            <span className="relative z-10">Explore Projects</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-emerald-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                         </motion.a>
 
                         <motion.a
                             href="#contact"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group px-8 py-4 bg-gradient-to-r from-platinum-500/20 to-gold-glow/20 border border-platinum-500/30 text-platinum-200 font-semibold rounded-full hover:border-gold-glow/60 hover:text-white transition-all duration-300 flex items-center gap-3 text-lg backdrop-blur-sm"
+                            whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group px-10 py-4 glass-panel text-white font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 text-lg"
                         >
-                            <Download className="w-5 h-5" />
+                            <Download className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
                             Get In Touch
                         </motion.a>
                     </motion.div>

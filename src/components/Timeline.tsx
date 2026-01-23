@@ -6,37 +6,40 @@ import { Briefcase } from 'lucide-react';
 
 const Timeline = () => {
     return (
-        <section id="experience" className="py-24 relative bg-obsidian-800/50">
+        <section id="experience" className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="relative">
-                    {/* Vertical Line */}
-                    <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold-glow/50 via-gold-shimmer/50 to-transparent md:-translate-x-1/2" />
+                    {/* Vertical Line - Refined */}
+                    <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/20 via-gold-400/20 to-transparent md:-translate-x-1/2" />
 
-                    <div className="flex flex-col gap-12">
+                    <div className="flex flex-col gap-16">
                         {resumeData.experience.map((job, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
-                                className={`flex flex-col md:flex-row gap-8 relative ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                                transition={{ duration: 0.8 }}
+                                className={`flex flex-col md:flex-row gap-12 relative ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                                     }`}
                             >
-                                {/* Timeline Dot */}
-                                <div className="absolute left-[20px] md:left-1/2 top-0 w-4 h-4 rounded-full bg-obsidian-900 border-2 border-gold-shimmer md:-translate-x-1/2 z-10 shadow-[0_0_10px_theme('colors.gold.shimmer')]" />
+                                {/* Timeline Dot - Enhanced */}
+                                <div className="absolute left-[20px] md:left-1/2 top-0 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-violet-500 md:-translate-x-1/2 z-10 shadow-[0_0_15px_rgba(139,92,246,0.5)]" />
 
-                                <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:text-right'
+                                <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'
                                     }`}>
-                                    <div className="text-gold-shimmer font-mono text-sm mb-2">{job.startDate} - {job.endDate}</div>
-                                    <h3 className="text-2xl font-bold text-white mb-1">{job.position}</h3>
-                                    <div className="text-gold-glow font-medium mb-4">
-                                        <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                    <div className="text-violet-400 font-outfit text-sm font-bold uppercase tracking-widest mb-3">
+                                        {job.startDate} — {job.endDate}
+                                    </div>
+                                    <h3 className="text-3xl font-bold text-white mb-2 font-outfit">{job.position}</h3>
+                                    <div className="text-gold-400 font-medium mb-6 font-outfit text-lg">
+                                        <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                                             {job.company}
                                         </a>
-                                        <span className="text-gray-500 mx-2">•</span>
-                                        <span className="text-gray-400">{job.location}</span>
+                                        <span className="text-white/20 mx-3">•</span>
+                                        <span className="text-platinum-500 font-inter text-base uppercase tracking-tight">{job.location}</span>
                                     </div>
-                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base bg-white/5 p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                                    <p className="glass-card p-8 text-platinum-300 leading-relaxed font-inter font-light text-lg">
                                         {job.description}
                                     </p>
                                 </div>

@@ -23,11 +23,11 @@ const Navbar = () => {
     return (
         <>
             <motion.nav
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5 }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'h-16 bg-background/80 backdrop-blur-md border-b border-foreground/5'
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "circOut" }}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+                    ? 'h-16 glass-panel border-b border-white/5 shadow-2xl'
                     : 'h-20 bg-transparent'
                     }`}
             >
@@ -39,25 +39,25 @@ const Navbar = () => {
                     </a>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden md:flex items-center gap-10">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
+                                className="text-sm font-semibold text-platinum-400 hover:text-white transition-all duration-300 relative group font-outfit uppercase tracking-widest"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-glow to-gold-shimmer group-hover:w-full transition-all duration-300" />
+                                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-gold-400 group-hover:w-full transition-all duration-500" />
                             </a>
                         ))}
 
-                        <div className="h-6 w-px bg-foreground/10" />
+                        <div className="h-4 w-px bg-white/10" />
 
-                        <div className="flex gap-4">
-                            <a href={resumeData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                        <div className="flex gap-5">
+                            <a href={resumeData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-platinum-400 hover:text-violet-400 transition-all duration-300 transform hover:scale-110">
                                 <Github size={20} />
                             </a>
-                            <a href={resumeData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                            <a href={resumeData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-platinum-400 hover:text-gold-400 transition-all duration-300 transform hover:scale-110">
                                 <Linkedin size={20} />
                             </a>
                         </div>
