@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-10">
                     <div className="text-center md:text-left">
-                        <a href="#" className="text-2xl font-bold font-outfit text-white mb-4 block">
+                        <a href="/" className="text-2xl font-bold font-outfit text-white mb-4 block">
                             <span className="text-violet-400">{'<'}</span>
                             Bhargavi
                             <span className="text-gold-400">{' />'}</span>
