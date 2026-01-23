@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Code, Star, Download } from 'lucide-react';
+import { ArrowRight, Briefcase, Code, Star, Download, Newspaper } from 'lucide-react';
 import resumeData from '@/data/resumeData.json';
 
 const Hero = () => {
@@ -33,7 +33,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-gold-400/20 rounded-full blur-md animate-ping" />
                         </div>
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-platinum-200">
-                            Senior Full-Stack AI Engineer
+                            Senior Full Stack & Frontend Architect
                         </span>
                     </motion.div>
 
@@ -62,7 +62,7 @@ const Hero = () => {
                         <div className="inline-flex items-center gap-3 px-5 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
                             <Briefcase className="text-violet-400 w-5 h-5" />
                             <span className="text-lg font-medium text-platinum-200 font-outfit uppercase tracking-wider">
-                                Solution Architect & AI Strategist
+                                Specializing in Angular, React, and Healthcare Innovation.
                             </span>
                         </div>
                     </motion.div>
@@ -74,9 +74,10 @@ const Hero = () => {
                         transition={{ delay: 0.8, duration: 1 }}
                         className="text-xl md:text-2xl text-platinum-400 max-w-3xl mx-auto mb-14 leading-relaxed font-light"
                     >
-                        Architecting intelligent systems that transform
-                        <span className="text-white font-medium"> complex data into actionable insights</span> and
-                        <span className="text-violet-400 font-medium"> scalable AI solutions</span>.
+                        Transforming complex healthcare and fintech requirements into
+                        <span className="text-white font-medium"> scalable, user-centric</span> digital solutions.
+                        Innovator behind the <span className="text-violet-400 font-medium">DiaFriend</span> app.
+                        11+ years delivering for Fortune 500 clients.
                     </motion.p>
 
                     {/* Premium CTA Buttons */}
@@ -92,18 +93,18 @@ const Hero = () => {
                             whileTap={{ scale: 0.98 }}
                             className="group relative px-10 py-4 bg-white text-obsidian-950 font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                         >
-                            <span className="relative z-10">Explore Projects</span>
+                            <span className="relative z-10">View Work</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </motion.a>
 
                         <motion.a
-                            href="#contact"
+                            href="/featured"
                             whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
                             whileTap={{ scale: 0.98 }}
                             className="group px-10 py-4 glass-panel text-white font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 text-lg"
                         >
-                            <Download className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
-                            Get In Touch
+                            <Newspaper className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
+                            Read Research News
                         </motion.a>
                     </motion.div>
 

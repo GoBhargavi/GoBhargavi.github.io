@@ -18,6 +18,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Journey', href: '/journey' },
+        { name: 'Featured', href: '/featured' },
     ];
 
     return (
