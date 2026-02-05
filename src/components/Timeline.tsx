@@ -2,52 +2,99 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import resumeData from '@/data/resumeData.json';
-import { Briefcase } from 'lucide-react';
+import { MapPin, ExternalLink } from 'lucide-react';
 
 const Timeline = () => {
     return (
         <section id="experience" className="py-24 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+            {/* Background */}
+            <div className="absolute inset-0 bg-obsidian-950" />
+
+            <div className="max-w-5xl mx-auto px-6 relative z-10">
+                {/* Section Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-black font-outfit text-white mb-4 tracking-tight">
+                        11-Year Journey
+                    </h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">
+                        From foundational engineering to staff-level architecture across three continents.
+                    </p>
+                </motion.div>
+
+                {/* Timeline */}
                 <div className="relative">
-                    {/* Vertical Line - Refined */}
-                    <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/20 via-gold-400/20 to-transparent md:-translate-x-1/2" />
+                    {/* Vertical Line */}
+                    <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500/30 via-slate-700/30 to-transparent md:-translate-x-px" />
 
-                    <div className="flex flex-col gap-16">
-                        {resumeData.experience.map((job, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.8 }}
-                                className={`flex flex-col md:flex-row gap-12 relative ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                                    }`}
-                            >
-                                {/* Timeline Dot - Enhanced */}
-                                <div className="absolute left-[20px] md:left-1/2 top-0 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-violet-500 md:-translate-x-1/2 z-10 shadow-[0_0_15px_rgba(139,92,246,0.5)]" />
+                    <div className="flex flex-col gap-12">
+                        {resumeData.experience.map((job, index) => {
+                            const isLeft = index % 2 === 0;
 
-                                <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16 md:text-right'
-                                    }`}>
-                                    <div className="text-violet-400 font-outfit text-sm font-bold uppercase tracking-widest mb-3">
-                                        {job.startDate} — {job.endDate}
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5 }}
+                                    className={`relative flex flex-col md:flex-row gap-8 ${isLeft ? 'md:flex-row-reverse' : ''
+                                        }`}
+                                >
+                                    {/* Timeline Dot */}
+                                    <div className="absolute left-6 md:left-1/2 top-0 w-3 h-3 rounded-full bg-obsidian-950 border-2 border-teal-500 md:-translate-x-1.5 z-10" />
+
+                                    {/* Content Card */}
+                                    <div className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? 'md:pl-12' : 'md:pr-12 md:text-right'
+                                        }`}>
+                                        {/* Date */}
+                                        <div className="text-teal-400 text-sm font-semibold mb-2 tracking-wide">
+                                            {job.startDate} — {job.endDate}
+                                        </div>
+
+                                        {/* Position */}
+                                        <h3 className="text-2xl font-bold text-white mb-2 font-outfit">
+                                            {job.position}
+                                        </h3>
+
+                                        {/* Company & Location */}
+                                        <div className={`flex items-center gap-3 mb-4 text-sm ${isLeft ? '' : 'md:justify-end'
+                                            }`}>
+                                            {job.companyUrl ? (
+                                                <a
+                                                    href={job.companyUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1"
+                                                >
+                                                    {job.company}
+                                                    <ExternalLink size={12} />
+                                                </a>
+                                            ) : (
+                                                <span className="text-amber-400">{job.company}</span>
+                                            )}
+                                            <span className="text-slate-600">•</span>
+                                            <span className="text-slate-500 inline-flex items-center gap-1">
+                                                <MapPin size={12} />
+                                                {job.location}
+                                            </span>
+                                        </div>
+
+                                        {/* Description */}
+                                        <p className="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-slate-400 leading-relaxed">
+                                            {job.description}
+                                        </p>
                                     </div>
-                                    <h3 className="text-3xl font-bold text-white mb-2 font-outfit">{job.position}</h3>
-                                    <div className="text-gold-400 font-medium mb-6 font-outfit text-lg">
-                                        <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                                            {job.company}
-                                        </a>
-                                        <span className="text-white/20 mx-3">•</span>
-                                        <span className="text-platinum-500 font-inter text-base uppercase tracking-tight">{job.location}</span>
-                                    </div>
-                                    <p className="glass-card p-8 text-platinum-300 leading-relaxed font-inter font-light text-lg">
-                                        {job.description}
-                                    </p>
-                                </div>
 
-                                {/* Empty half for desktop layout balance */}
-                                <div className="hidden md:block md:w-1/2" />
-                            </motion.div>
-                        ))}
+                                    {/* Spacer for alternating layout */}
+                                    <div className="hidden md:block md:w-1/2" />
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

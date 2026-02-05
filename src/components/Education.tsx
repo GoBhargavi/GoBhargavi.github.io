@@ -2,57 +2,79 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import resumeData from '@/data/resumeData.json';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, ExternalLink, BookOpen } from 'lucide-react';
 
 const Education = () => {
     return (
-        <section id="education" className="py-24 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="education" className="py-24 relative">
+            {/* Background */}
+            <div className="absolute inset-0 bg-obsidian-900" />
+
+            <div className="max-w-5xl mx-auto px-6 relative z-10">
+                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-20 text-center"
+                    className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8">
-                        <GraduationCap className="text-gold-400" size={18} />
-                        <span className="text-xs font-bold uppercase tracking-widest text-platinum-400">Academic</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
+                        <GraduationCap className="text-teal-400" size={16} />
+                        <span className="text-xs font-semibold uppercase tracking-widest text-teal-400">Education</span>
                     </div>
-                    <h2 className="text-5xl md:text-7xl font-black font-outfit mb-8 tracking-tighter">
-                        <span className="text-gradient">Education Background</span>
+                    <h2 className="text-3xl md:text-4xl font-bold font-outfit text-white mb-4">
+                        Academic Background
                     </h2>
                 </motion.div>
 
-                <div className="grid gap-10">
+                {/* Education Cards */}
+                <div className="grid md:grid-cols-2 gap-6">
                     {resumeData.education.map((edu, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.8 }}
-                            className="glass-card p-10 flex flex-col md:flex-row md:items-start gap-10"
+                            transition={{ delay: index * 0.1 }}
+                            className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-all duration-300"
                         >
-                            <div className="flex-grow">
-                                <h3 className="text-3xl font-bold text-white mb-2 font-outfit">{edu.institution}</h3>
-                                <div className="text-gold-400 text-xl font-medium mb-2 font-outfit tracking-wide">{edu.degree}</div>
-                                <div className="text-platinum-500 mb-6 font-semibold uppercase tracking-widest text-xs">
-                                    {edu.startDate} — {edu.endDate}
-                                </div>
-                                <p className="text-platinum-300 leading-relaxed font-inter font-light text-lg">{edu.description}</p>
+                            {/* Icon */}
+                            <div className="p-3 rounded-xl bg-teal-500/10 w-fit mb-6">
+                                <BookOpen className="text-teal-400" size={24} />
                             </div>
 
-                            {edu.institutionUrl && (
-                                <div className="flex-shrink-0">
+                            {/* Degree */}
+                            <h3 className="text-xl font-bold text-white mb-2 font-outfit">
+                                {edu.degree}
+                            </h3>
+
+                            {/* Institution */}
+                            <div className="mb-4">
+                                {edu.institutionUrl ? (
                                     <a
                                         href={edu.institutionUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-8 py-3 bg-white text-obsidian-950 rounded-xl hover:bg-gold-500 hover:text-white transition-all text-sm font-bold"
+                                        className="text-teal-400 hover:text-teal-300 transition-colors inline-flex items-center gap-1"
                                     >
-                                        Visit Institution
+                                        {edu.institution}
+                                        <ExternalLink size={12} />
                                     </a>
-                                </div>
+                                ) : (
+                                    <span className="text-teal-400">{edu.institution}</span>
+                                )}
+                            </div>
+
+                            {/* Date */}
+                            <div className="text-slate-500 text-sm mb-4">
+                                {edu.startDate} — {edu.endDate}
+                            </div>
+
+                            {/* Description */}
+                            {edu.description && (
+                                <p className="text-slate-400 text-sm leading-relaxed">
+                                    {edu.description}
+                                </p>
                             )}
                         </motion.div>
                     ))}

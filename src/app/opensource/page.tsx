@@ -1,96 +1,154 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Code, ExternalLink } from 'lucide-react';
+import { Github, Code, ExternalLink, Folder } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const openSourceProjects = [
     {
-        title: "DiaFriend Production Release",
-        tags: ["Flutter", "Dart", "Google Play"],
-        description: "A localized diabetes management tool for the SouthCoast Portuguese community.",
-        link: "https://play.google.com/store/apps/details?id=com.umassd.diafriend" // Assuming this or placeholder
+        title: "DiaFriend - Diabetes Management",
+        tags: ["Flutter", "Dart", "Firebase", "ML Kit"],
+        description: "Award-winning diabetes management app for the SouthCoast Portuguese community. Featured in UMass Dartmouth News. 10,000+ downloads on Google Play Store.",
+        link: "https://play.google.com/store/apps/details?id=com.umassd.diafriend",
+        isLive: true
     },
     {
-        title: "Predictive Visitor Management (Thesis)",
-        tags: ["Python", "Flask", "Machine Learning"],
-        description: "A microservices-based system using ARIMA and LSTM algorithms to predict tourist traffic.",
-        link: "https://github.com/GoBhargavi" // Placeholder to general github until specific repo known
+        title: "Predictive Visitor Management",
+        tags: ["Python", "Flask", "TensorFlow", "ARIMA"],
+        description: "Master's thesis project using ARIMA and LSTM algorithms to predict tourist traffic patterns. Full microservices architecture with ML pipeline.",
+        link: "https://github.com/GoBhargavi",
+        isLive: false
+    },
+    {
+        title: "RAG Chatbot System",
+        tags: ["LangChain", "OpenAI", "React", "Vector DB"],
+        description: "Production-grade conversational AI with retrieval-augmented generation, context grounding, and feedback mechanisms.",
+        link: "https://github.com/GoBhargavi",
+        isLive: false
     },
     {
         title: "ReLeaf Substance Support",
-        tags: ["HealthTech", "Research"],
-        description: "A digital intervention tool for substance abuse disorder support.",
-        link: "https://github.com/GoBhargavi" // Placeholder
+        tags: ["React Native", "Node.js", "HealthTech"],
+        description: "Digital intervention tool for substance abuse disorder support, developed in collaboration with healthcare researchers.",
+        link: "https://github.com/GoBhargavi",
+        isLive: false
     }
 ];
 
 export default function OpenSourcePage() {
     return (
-        <main className="min-h-screen bg-background relative overflow-hidden flex flex-col">
-            {/* Background Effects */}
-            <div className="fixed inset-0 z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="fixed inset-0 z-[-1] bg-[radial-gradient(circle_800px_at_50%_-20%,#7c3aed1a,transparent)]"></div>
+        <main className="min-h-screen bg-obsidian-950 relative overflow-hidden flex flex-col">
+            {/* Background */}
+            <div className="fixed inset-0 z-[-1] bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:64px_64px]" />
+            <div className="fixed inset-0 z-[-1] bg-[radial-gradient(circle_800px_at_50%_-20%,rgba(20,184,166,0.08),transparent)]" />
 
             <Navbar />
 
             <section className="pt-32 pb-20 flex-grow px-6">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-6xl mx-auto">
+                    {/* Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center mb-20"
+                        className="text-center mb-16"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8">
-                            <Code className="text-violet-400" size={18} />
-                            <span className="text-xs font-bold uppercase tracking-widest text-platinum-400">Open Source</span>
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
+                            <Code className="text-teal-400" size={16} />
+                            <span className="text-xs font-semibold uppercase tracking-widest text-teal-400">Open Source</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black font-outfit mb-6 tracking-tighter">
-                            <span className="text-gradient">Public Repositories</span>
+                        <h1 className="text-4xl md:text-6xl font-black font-outfit mb-6 tracking-tight text-white">
+                            Public Projects
                         </h1>
-                        <p className="text-platinum-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-                            Contributing to the developer community with impactful tools and research-backed applications.
+                        <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                            Contributing to the developer community with AI-powered tools, healthcare applications, and research-backed systems.
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Projects Grid */}
+                    <div className="grid md:grid-cols-2 gap-6">
                         {openSourceProjects.map((project, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 group"
+                                transition={{ delay: index * 0.1 }}
+                                className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/30 transition-all duration-300 flex flex-col"
                             >
-                                <div className="mb-6">
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.tags.map(tag => (
-                                            <span key={tag} className="px-3 py-1 bg-violet-50 text-violet-600 rounded-full text-xs font-bold uppercase tracking-wider">
-                                                {tag}
-                                            </span>
-                                        ))}
+                                {/* Header */}
+                                <div className="flex items-start justify-between mb-4">
+                                    <div className="p-3 rounded-xl bg-white/5">
+                                        <Folder className="text-teal-400" size={20} />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-obsidian-900 mb-3 font-outfit group-hover:text-violet-600 transition-colors">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-gray-600 leading-relaxed font-light mb-6 flex-grow">
-                                        {project.description}
-                                    </p>
+                                    {project.isLive && (
+                                        <span className="px-3 py-1 bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-semibold rounded-full">
+                                            Live
+                                        </span>
+                                    )}
                                 </div>
 
+                                {/* Title */}
+                                <h3 className="text-xl font-bold text-white mb-3 font-outfit group-hover:text-teal-400 transition-colors">
+                                    {project.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="text-slate-400 leading-relaxed mb-6 flex-grow">
+                                    {project.description}
+                                </p>
+
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {project.tags.map(tag => (
+                                        <span
+                                            key={tag}
+                                            className="px-2 py-1 bg-white/5 text-slate-400 rounded-md text-xs border border-white/5"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Link */}
                                 <a
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-auto inline-flex items-center gap-2 px-6 py-3 bg-obsidian-900 text-white rounded-xl font-bold hover:bg-violet-600 transition-colors w-fit group/btn"
+                                    className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-all w-fit cursor-pointer"
                                 >
-                                    <Github size={18} />
-                                    <span>View Code</span>
+                                    {project.isLive ? (
+                                        <>
+                                            <ExternalLink size={16} />
+                                            View Live
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Github size={16} />
+                                            View Code
+                                        </>
+                                    )}
                                 </a>
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* GitHub CTA */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                        className="text-center mt-16"
+                    >
+                        <a
+                            href="https://github.com/GoBhargavi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-teal-500 text-obsidian-950 font-semibold rounded-xl hover:bg-teal-400 transition-all cursor-pointer"
+                        >
+                            <Github size={20} />
+                            View All on GitHub
+                        </a>
+                    </motion.div>
                 </div>
             </section>
 

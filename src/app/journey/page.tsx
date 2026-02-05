@@ -1,28 +1,29 @@
-
 import { Suspense } from 'react';
 import Timeline from '@/components/Timeline';
 import Education from '@/components/Education';
-import { Loader } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-    title: 'Journey | Experience & Education',
-    description: 'A timeline of my professional experience in Data Science and AI, along with my academic background.',
+    title: 'Journey | 11 Years of Engineering Excellence',
+    description: 'A timeline of 11+ years of professional experience in Full-Stack Development and AI Engineering, along with academic background.',
 };
-
-import Navbar from '@/components/Navbar';
 
 export default function JourneyPage() {
     return (
-        <main className="min-h-screen pt-20">
+        <main className="min-h-screen bg-obsidian-950 flex flex-col">
             <Navbar />
-            <Suspense fallback={
-                <div className="flex justify-center items-center h-64">
-                    <Loader className="animate-spin text-violet-glow" size={48} />
-                </div>
-            }>
-                <Timeline />
-                <Education />
-            </Suspense>
+            <div className="pt-20 flex-grow">
+                <Suspense fallback={
+                    <div className="flex justify-center items-center h-64">
+                        <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
+                    </div>
+                }>
+                    <Timeline />
+                    <Education />
+                </Suspense>
+            </div>
+            <Footer />
         </main>
     );
 }

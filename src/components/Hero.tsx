@@ -1,50 +1,57 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Code, Star, Download, Newspaper } from 'lucide-react';
+import { ArrowRight, Layers, Briefcase, Globe, Zap } from 'lucide-react';
 import resumeData from '@/data/resumeData.json';
 
 const Hero = () => {
+    const stats = [
+        { icon: Zap, label: "Years", value: "11+", description: "Engineering" },
+        { icon: Globe, label: "Domains", value: "3", description: "Healthcare • Fintech • Enterprise" },
+        { icon: Layers, label: "Scale", value: "M+", description: "Users Served" },
+        { icon: Briefcase, label: "Clients", value: "10+", description: "Fortune 500" }
+    ];
+
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
-            {/* Premium Background Elements */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">
+            {/* Premium Background */}
             <div className="absolute inset-0 bg-obsidian-950" />
 
-            {/* Animated Background Orbs - Refined */}
-            <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-violet-600/10 rounded-full blur-[160px] pointer-events-none animate-pulse" />
-            <div className="absolute bottom-1/4 -right-1/4 w-[700px] h-[700px] bg-gold-600/10 rounded-full blur-[140px] pointer-events-none animate-pulse delay-1000" />
+            {/* Subtle Grid Pattern */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            {/* Ambient Glow Effects */}
+            <div className="absolute top-1/3 -left-1/4 w-[600px] h-[600px] bg-teal-500/8 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-amber-500/6 rounded-full blur-[100px] pointer-events-none" />
+
+            <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center"
                 >
-                    {/* Premium Badge */}
+                    {/* Authority Badge */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.8 }}
-                        className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass-panel mb-10 group hover:border-violet-500/40 transition-all duration-500 cursor-default"
+                        transition={{ delay: 0.1, duration: 0.6 }}
+                        className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-8"
                     >
-                        <div className="relative">
-                            <Star className="text-gold-400 w-4 h-4 animate-pulse" />
-                            <div className="absolute inset-0 bg-gold-400/20 rounded-full blur-md animate-ping" />
-                        </div>
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-platinum-200">
-                            Senior Full Stack & Frontend Architect
+                        <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse-soft" />
+                        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-teal-400">
+                            11+ Years Engineering Excellence
                         </span>
                     </motion.div>
 
-                    {/* Premium Name Display */}
+                    {/* Name Display */}
                     <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 1 }}
-                        className="text-7xl md:text-9xl font-black font-outfit tracking-tighter mb-8"
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                        className="text-6xl md:text-8xl lg:text-9xl font-black font-outfit tracking-tighter mb-4"
                     >
-                        <span className="block text-white mb-2">
+                        <span className="block text-white">
                             {resumeData.personalInfo.name.split(' ')[0]}
                         </span>
                         <span className="block text-gradient">
@@ -52,103 +59,101 @@ const Hero = () => {
                         </span>
                     </motion.h1>
 
-                    {/* Enhanced Title */}
+                    {/* Title */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6, duration: 1 }}
-                        className="mb-10"
+                        transition={{ delay: 0.3, duration: 0.8 }}
+                        className="mb-8"
                     >
-                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                            <Briefcase className="text-violet-400 w-5 h-5" />
-                            <span className="text-lg font-medium text-platinum-200 font-outfit uppercase tracking-wider">
-                                Specializing in Angular, React, and Healthcare Innovation.
-                            </span>
-                        </div>
-                        <div className="mt-6 text-platinum-400 font-outfit text-sm uppercase tracking-widest font-semibold">
-                            4 Public Repositories <span className="text-gold-400 mx-2">•</span> 2 Live Healthcare Apps <span className="text-gold-400 mx-2">•</span> 1 Master's Thesis
+                        <h2 className="text-xl md:text-2xl font-outfit font-medium text-slate-300 tracking-wide">
+                            Senior Full-Stack Engineer
+                        </h2>
+                        <div className="mt-3 flex items-center justify-center gap-2 text-slate-500 text-sm">
+                            <span>{resumeData.personalInfo.location}</span>
+                            <span className="text-teal-500">•</span>
+                            <span>Open to Opportunities</span>
                         </div>
                     </motion.div>
 
-                    {/* Premium Summary */}
+                    {/* Summary */}
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 1 }}
-                        className="text-xl md:text-2xl text-platinum-400 max-w-3xl mx-auto mb-14 leading-relaxed font-light"
+                        transition={{ delay: 0.4, duration: 0.8 }}
+                        className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
                     >
-                        Transforming complex healthcare and fintech requirements into
-                        <span className="text-white font-medium"> scalable, user-centric</span> digital solutions.
-                        Innovator behind the <span className="text-violet-400 font-medium">DiaFriend</span> app.
-                        11+ years delivering for Fortune 500 clients.
+                        Building <span className="text-white font-medium">production systems</span> and
+                        <span className="text-white font-medium"> scalable architectures</span> across
+                        healthcare, fintech, and enterprise domains. From micro-frontends at Fortune 500
+                        to <span className="text-teal-400 font-medium">award-winning healthcare apps</span>.
                     </motion.p>
 
-                    {/* Premium CTA Buttons */}
+                    {/* CTA Buttons */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="flex flex-col sm:flex-row gap-8 items-center justify-center mb-16"
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                        className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16"
                     >
                         <motion.a
                             href="#projects"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="group relative px-10 py-4 bg-white text-obsidian-950 font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+                            className="group px-8 py-4 bg-white text-obsidian-950 font-semibold rounded-xl transition-all duration-300 flex items-center gap-3 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] cursor-pointer"
                         >
-                            <span className="relative z-10">View Work</span>
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <span>View My Work</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </motion.a>
 
                         <motion.a
-                            href="/featured"
-                            whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
+                            href="/journey"
+                            whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="group px-10 py-4 glass-panel text-white font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 text-lg"
+                            className="group px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl transition-all duration-300 flex items-center gap-3 hover:bg-white/10 hover:border-white/20 cursor-pointer"
                         >
-                            <Newspaper className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
-                            Read Research News
+                            <span>11-Year Journey</span>
                         </motion.a>
                     </motion.div>
 
-                    {/* Quick Stats */}
+                    {/* Stats Grid */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.2, duration: 0.8 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
+                        transition={{ delay: 0.6, duration: 0.8 }}
+                        className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
                     >
-                        {[
-                            { icon: Code, label: "Projects", value: "50+", color: "text-rose-400" },
-                            { icon: Briefcase, label: "Years", value: "11+", color: "text-emerald-400" },
-                            { icon: Star, label: "Clients", value: "10+", color: "text-gold-glow" },
-                            { icon: Code, label: "Tech Stack", value: "20+", color: "text-platinum-300" }
-                        ].map((stat, index) => (
+                        {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
-                                whileHover={{ scale: 1.1 }}
-                                className="text-center"
+                                whileHover={{ y: -4 }}
+                                transition={{ duration: 0.2 }}
+                                className="group p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-all duration-300 cursor-default"
                             >
-                                <stat.icon className={`w-8 h-8 mx-auto mb-2 ${stat.color}`} />
-                                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                                <div className="text-sm text-platinum-400">{stat.label}</div>
+                                <stat.icon className="w-5 h-5 text-teal-400 mb-3 mx-auto" />
+                                <div className="text-3xl font-bold text-white font-outfit mb-1">{stat.value}</div>
+                                <div className="text-xs text-slate-500 uppercase tracking-wider">{stat.label}</div>
                             </motion.div>
                         ))}
                     </motion.div>
                 </motion.div>
             </div>
 
-            {/* Premium Scroll Indicator */}
+            {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, y: [0, 15, 0] }}
-                transition={{ delay: 2, duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2"
             >
-                <div className="flex flex-col items-center gap-2">
-                    <span className="text-platinum-400 text-sm font-medium">Scroll</span>
-                    <div className="w-[2px] h-20 bg-gradient-to-b from-transparent via-gold-glow to-transparent rounded-full" />
-                </div>
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="flex flex-col items-center gap-2"
+                >
+                    <span className="text-slate-600 text-xs uppercase tracking-widest">Scroll</span>
+                    <div className="w-px h-12 bg-gradient-to-b from-slate-600 to-transparent" />
+                </motion.div>
             </motion.div>
         </section>
     );

@@ -57,13 +57,69 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Premium AI Portfolio Palette
+        // Premium Professional Palette
         obsidian: {
-          950: "#050505",
-          900: "#0a0a0a",
-          800: "#121212",
-          700: "#1e1e1e",
+          950: "#050506",
+          900: "#0a0a0b",
+          800: "#111113",
+          700: "#1a1a1d",
+          600: "#252529",
         },
+        slate: {
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E293B",
+          900: "#0F172A",
+        },
+        // Professional Teal Accent
+        teal: {
+          50: "#F0FDFA",
+          100: "#CCFBF1",
+          200: "#99F6E4",
+          300: "#5EEAD4",
+          400: "#2DD4BF",
+          500: "#14B8A6",
+          600: "#0D9488",
+          700: "#0F766E",
+          800: "#115E59",
+          900: "#134E4A",
+        },
+        // Amber/Gold Accent for highlights
+        amber: {
+          50: "#FFFBEB",
+          100: "#FEF3C7",
+          200: "#FDE68A",
+          300: "#FCD34D",
+          400: "#FBBF24",
+          500: "#F59E0B",
+          600: "#D97706",
+          700: "#B45309",
+          800: "#92400E",
+          900: "#78350F",
+        },
+        // Legacy gold for backwards compatibility
+        gold: {
+          50: "#fffbeb",
+          100: "#fef3c7",
+          200: "#fde68a",
+          300: "#fcd34d",
+          400: "#fbbf24",
+          500: "#f59e0b",
+          600: "#d97706",
+          700: "#b45309",
+          800: "#92400e",
+          900: "#78350f",
+          glow: "#FBBF24",
+          shimmer: "#FDE68A",
+          metallic: "#B45309",
+        },
+        // Legacy platinum
         platinum: {
           50: "#f8f9fa",
           100: "#e9ecef",
@@ -76,26 +132,12 @@ const config: Config = {
           800: "#212529",
           900: "#111111",
         },
+        // Legacy violet (for gradual migration)
         violet: {
           400: "#a78bfa",
           500: "#8b5cf6",
           600: "#7c3aed",
         },
-        gold: {
-          50: "#fffbeb",
-          100: "#fef3c7",
-          200: "#fde68a",
-          300: "#fcd34d",
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-          700: "#b45309",
-          800: "#92400e",
-          900: "#78350f",
-          glow: "#FFD700",
-          shimmer: "#FBF5D4",
-          metallic: "#B8860B",
-        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -104,12 +146,13 @@ const config: Config = {
         xl: "1rem",
         "2xl": "1.5rem",
         "3xl": "2rem",
-        "4xl": "2.5rem", // Super-elliptical
+        "4xl": "2.5rem",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #FFD70033 0deg, #FBF5D433 180deg, #FFD70033 360deg)',
+        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #14B8A633 0deg, #FBBF2433 180deg, #14B8A633 360deg)',
         'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+        'teal-glow': 'radial-gradient(circle at center, rgba(20, 184, 166, 0.15) 0%, transparent 70%)',
       },
       keyframes: {
         "fade-up": {
@@ -132,10 +175,19 @@ const config: Config = {
             "offset-distance": "100%",
           },
         },
+        "pulse-soft": {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.7",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out forwards",
         "shimmer": "shimmer 2s linear infinite",
+        "pulse-soft": "pulse-soft 3s ease-in-out infinite",
       },
     },
   },
