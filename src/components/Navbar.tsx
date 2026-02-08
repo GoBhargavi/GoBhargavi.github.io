@@ -20,9 +20,9 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Experience', href: '/#experience' },
-        { name: 'Work', href: '/#projects' },
-        { name: 'Skills', href: '/#skills' },
-        { name: 'Mentions', href: '/featured' },
+        { name: 'Work', href: '/#featured-work' },
+        { name: 'Mentorship', href: '/#mentorship' },
+        { name: 'Contact', href: '/#footer' },
     ];
 
     return (

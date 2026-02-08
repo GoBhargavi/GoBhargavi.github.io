@@ -30,7 +30,7 @@ const cases = [
 
 const FeaturedCaseStudy = () => {
     return (
-        <section className="py-24 bg-obsidian-950">
+        <section id="featured-work" className="py-24 bg-obsidian-950">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-6">

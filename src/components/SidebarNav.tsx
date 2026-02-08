@@ -5,9 +5,9 @@ import { User, Layers, Code, MessageSquare, FileText, ArrowUp } from 'lucide-rea
 
 const navItems = [
     { name: 'Profile', href: '#hero', icon: User },
-    { name: 'Arsenal', href: '#skills', icon: Code },
     { name: 'Work', href: '#featured-work', icon: Layers },
-    { name: 'Connect', href: '#footer', icon: MessageSquare },
+    { name: 'Journey', href: '#experience', icon: Code },
+    { name: 'Contact', href: '#footer', icon: MessageSquare },
 ];
 
 const SidebarNav = () => {
