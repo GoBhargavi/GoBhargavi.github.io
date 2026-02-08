@@ -14,7 +14,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="text-center md:text-left">
                         <a href="/" className="text-xl font-bold text-white tracking-tight mb-2 block">
-                            Bhargavi<span className="text-neon-cyan"> Govardhanam</span>
+                            Bhargavi<span className="text-gold"> Govardhanam</span>
                         </a>
                         <p className="text-slate-500 text-sm">
                             Building scalable systems with precision.
@@ -27,7 +27,7 @@ const Footer = () => {
                             href={resumeData.personalInfo.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-slate-400 hover:text-neon-cyan transition-colors"
+                            className="text-slate-400 hover:text-gold transition-colors"
                             aria-label="GitHub"
                         >
                             <Github size={20} />
@@ -36,14 +36,14 @@ const Footer = () => {
                             href={resumeData.personalInfo.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-slate-400 hover:text-neon-cyan transition-colors"
+                            className="text-slate-400 hover:text-gold transition-colors"
                             aria-label="LinkedIn"
                         >
                             <Linkedin size={20} />
                         </a>
                         <a
                             href={`mailto:${resumeData.personalInfo.email}`}
-                            className="text-slate-400 hover:text-neon-cyan transition-colors"
+                            className="text-slate-400 hover:text-gold transition-colors"
                             aria-label="Email"
                         >
                             <Mail size={20} />
@@ -58,8 +58,8 @@ const Footer = () => {
                         © {currentYear} Bhargavi Govardhanam. All rights reserved.
                     </div>
                     <div className="flex gap-6">
-                        <a href="/featured" className="hover:text-neon-cyan transition-colors">Mentions</a>
-                        <a href="https://github.com/GoBhargavi" target="_blank" rel="noopener noreferrer" className="hover:text-neon-cyan transition-colors inline-flex items-center gap-1">
+                        <a href="/featured" className="hover:text-gold transition-colors">Mentions</a>
+                        <a href="https://github.com/GoBhargavi" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors inline-flex items-center gap-1">
                             GitHub <ArrowUpRight size={12} />
                         </a>
                     </div>

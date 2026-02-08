@@ -178,6 +178,56 @@
       "featured": false
     }
   ],
+  "mentorship": {
+    "title": "Mentorship & Community",
+    "description": "Giving back to the community by guiding aspiring developers and students.",
+    "platform": "Topmate",
+    "profileUrl": "https://topmate.io/",
+    "testimonials": [
+      {
+        "name": "Dev Tyagi",
+        "date": "12th Aug, 2024",
+        "rating": 5,
+        "text": "Bhargavi inspire you to think bigger when it comes to career goals, thank you for encouraging me to aim for more challenging roles."
+      },
+      {
+        "name": "Naveen Badisa",
+        "date": "17th Jul, 2024",
+        "rating": 5,
+        "text": "I'm so grateful for Bhargavi's 1:1 session. She provided a clear and structured plan for interview preparation, making it easy for me to learn. Thanks to her, I now feel more confident. Overall, it was a great session."
+      },
+      {
+        "name": "Subalakshmi Shanthosi",
+        "date": "5th May, 2024",
+        "rating": 5,
+        "text": "I recently had the pleasure of receiving career guidance from Bhargavi, and I must say, it was really very useful and motivating. Her passion for helping others achieve their career aspirations was evident, and her suggestions were tailored to my specific situation and goals."
+      },
+      {
+        "name": "Apoorva Mamindla",
+        "date": "4th May, 2024",
+        "rating": 4,
+        "text": "It was an incredible session overall, got valuable suggestions. The software/career guidance session I attended was really insightful. Bhargavi explained things clearly and knew her stuff well. She made complex topics easy to understand."
+      },
+      {
+        "name": "Yatin Nagpal",
+        "date": "17th Jul, 2024",
+        "rating": 5,
+        "text": "The session was really very helpful. Thank you Bhargavi, your guidance on backend development and career goals would definitely help me uplift myself. You had given good amount of time in understanding my problem and doubts."
+      },
+      {
+        "name": "Ashrita",
+        "date": "22nd Jun, 2024",
+        "rating": 5,
+        "text": "I want to express my heartfelt gratitude to Bhargavi for her invaluable guidance and support. She not only boosted my confidence but also provided clear insights into the specific skillset I should develop, tailored to my abilities."
+      },
+      {
+        "name": "Sreeya nimmagadda",
+        "date": "20th Jun, 2022",
+        "rating": 5,
+        "text": "Good and thank you"
+      }
+    ]
+  },
   "languages": [],
   "interests": [],
   "softSkills": []

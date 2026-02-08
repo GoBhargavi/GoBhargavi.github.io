@@ -21,8 +21,10 @@ const config: Config = {
           purple: '#9d00ff', // Tertiary accent
         },
         gold: {
-          400: '#ffd700', // Gold accent
+          DEFAULT: '#D4AF37', // Matches globals.css --gold
+          400: '#ffd700',
           500: '#ffb700',
+          dim: '#AA8C2C', // Matches globals.css --gold-dim
         },
       },
       fontFamily: {

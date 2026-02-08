@@ -45,7 +45,7 @@ const Navbar = () => {
                                 className="object-cover"
                             />
                         </div>
-                        <span className="text-xl font-bold tracking-tight text-white group-hover:text-neon-cyan transition-colors">
+                        <span className="text-xl font-bold tracking-tight text-white group-hover:text-gold transition-colors">
                             Bhargavi Govardhanam
                         </span>
                     </a>
@@ -95,7 +95,7 @@ const Navbar = () => {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-2xl font-bold text-slate-300 hover:text-neon-cyan transition-colors"
+                                    className="text-2xl font-bold text-slate-300 hover:text-gold transition-colors"
                                 >
                                     {link.name}
                                 </a>

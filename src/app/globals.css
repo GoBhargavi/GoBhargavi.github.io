@@ -20,9 +20,12 @@
     --font-inter: 'Inter', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+html {}
+
+@media (min-width: 768px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
 }
 
 body {
@@ -34,9 +37,11 @@ body {
     overflow-x: hidden;
 }
 
-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+@media (min-width: 768px) {
+    section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
 }
 
 @layer base {
@@ -62,13 +67,13 @@ section {
         @apply bg-obsidian-900/80 backdrop-blur-xl border-b border-white/[0.05];
     }
 
-    /* Neon Glow Effects */
+    /* Gold Glow Effects */
     .text-glow {
-        text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
     }
 
     .border-glow {
-        box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
     }
 
     /* Section Containers */
@@ -78,7 +83,7 @@ section {
 
     /* Animated Gradient Text */
     .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-blue-400 to-purple-500 animate-pulse-slow;
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-gold to-yellow-200;
     }
 }
 

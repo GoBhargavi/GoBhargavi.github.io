@@ -11,9 +11,6 @@ const cases = [
         description: 'AI-driven technical log analysis tool using RAG to bridge raw data with engineering insights.',
         stats: 'RAG Implementation',
         iconName: 'Cpu',
-        color: 'text-gold',
-        bg: 'bg-gold/10',
-        border: 'border-gold/20'
     },
     {
         slug: 'diafriend',
@@ -21,9 +18,6 @@ const cases = [
         description: 'Production-ready diabetes management app with 10k+ downloads on the Google Play Store.',
         stats: '10K+ Downloads',
         iconName: 'Smartphone',
-        color: 'text-green-400',
-        bg: 'bg-green-400/10',
-        border: 'border-green-400/20'
     },
     {
         slug: 'micro-frontend',
@@ -31,18 +25,15 @@ const cases = [
         description: 'Decoupling massive monolithic healthcare platforms for autonomous team deployments.',
         stats: '40% Bundle Reduction',
         iconName: 'Layers',
-        color: 'text-purple-400',
-        bg: 'bg-purple-400/10',
-        border: 'border-purple-400/20'
     }
 ];
 
 const FeaturedCaseStudy = () => {
     return (
-        <section className="py-20 bg-obsidian-950">
-            <div className="container mx-auto px-6">
-                <div className="mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold font-outfit text-white mb-4">
+        <section className="py-24 bg-obsidian-950">
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-6">
                         Engineered for <span className="text-gradient">Impact</span>
                     </h2>
                     <p className="text-slate-400 max-w-2xl text-lg font-light leading-relaxed">
@@ -65,19 +56,19 @@ const FeaturedCaseStudy = () => {
                                 className="group h-full"
                             >
                                 <Link href={`/work/${project.slug}`} className="block h-full">
-                                    <div className={`h-full p-8 rounded-2xl bg-obsidian-900/50 backdrop-blur-sm border ${project.border} hover:border-opacity-50 transition-all duration-300 relative overflow-hidden flex flex-col`}>
+                                    <div className="h-full p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-gold/50 transition-all duration-300 relative overflow-hidden flex flex-col group-hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
 
                                         {/* Icon & Badge */}
                                         <div className="flex justify-between items-start mb-6">
-                                            <div className={`p-3 rounded-xl ${project.bg} ${project.color} bg-opacity-20`}>
-                                                <Icon size={24} />
+                                            <div className="p-3 rounded-xl bg-gold/10 group-hover:bg-gold/20 transition-colors">
+                                                <Icon size={24} className="text-gold" />
                                             </div>
-                                            <span className={`text-xs font-mono px-3 py-1 rounded-full border ${project.border} ${project.color} bg-obsidian-950/50`}>
+                                            <span className="text-xs font-mono px-3 py-1 rounded-full border border-white/5 text-slate-400 bg-white/5 group-hover:text-gold group-hover:border-gold/20 transition-colors">
                                                 {project.stats}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors font-outfit">
+                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors font-outfit">
                                             {project.title}
                                         </h3>
 
@@ -85,13 +76,13 @@ const FeaturedCaseStudy = () => {
                                             {project.description}
                                         </p>
 
-                                        <div className="flex items-center gap-2 text-sm font-medium text-white group-hover:gap-4 transition-all mt-auto">
+                                        <div className="flex items-center gap-2 text-sm font-medium text-white group-hover:gap-4 transition-all mt-auto group-hover:text-gold">
                                             Read Case Study
-                                            <LucideIcons.ArrowRight size={16} className="text-neon-cyan" />
+                                            <LucideIcons.ArrowRight size={16} className="text-gold" />
                                         </div>
 
                                         {/* Hover Gradient */}
-                                        <div className={`absolute inset-0 ${project.bg} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                                        <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                                     </div>
                                 </Link>
                             </motion.div>

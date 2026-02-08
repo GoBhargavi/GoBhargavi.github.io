@@ -50,9 +50,9 @@ const Skills = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-6">
-                        Technical <span className="text-neon-cyan">Arsenal</span>
+                        Technical <span className="text-gradient">Arsenal</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl text-lg">
+                    <p className="text-slate-400 max-w-2xl text-lg leading-relaxed">
                         A comprehensive toolkit for building modern, scalable web applications from the metal up.
                     </p>
                 </motion.div>
@@ -65,23 +65,23 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="group relative p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-neon-cyan/30 transition-all duration-300"
+                            className="group relative p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-gold/50 transition-all duration-300"
                         >
                             {/* Hover Glow */}
-                            <div className="absolute inset-0 bg-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+                            <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
 
                             <div className="relative z-10">
-                                <div className="p-3 bg-white/5 w-fit rounded-xl mb-6 group-hover:bg-neon-cyan/10 transition-colors">
-                                    <group.icon className="w-8 h-8 text-neon-cyan" />
+                                <div className="p-3 bg-gold/10 w-fit rounded-xl mb-6 group-hover:bg-gold/20 transition-colors">
+                                    <group.icon className="w-8 h-8 text-gold" />
                                 </div>
 
                                 <h3 className="text-xl font-bold text-white mb-2">{group.category}</h3>
-                                <p className="text-slate-500 text-sm mb-8">{group.description}</p>
+                                <p className="text-slate-400 text-sm mb-8 leading-relaxed">{group.description}</p>
 
                                 <div className="space-y-4">
                                     {group.skills.map((skill, sIdx) => (
                                         <div key={sIdx} className="flex items-start gap-3">
-                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-neon-cyan/50" />
+                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold/50" />
                                             <div>
                                                 <div className="text-slate-200 font-medium">{skill.name}</div>
                                                 <div className="text-xs text-slate-500 font-mono">{skill.desc}</div>

@@ -65,7 +65,7 @@ const Projects = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-6">
-                        Featured <span className="text-neon-cyan">Work</span>
+                        Featured <span className="text-gradient">Work</span>
                     </h2>
                     <p className="text-slate-400 max-w-2xl text-lg">
                         Highlights from my portfolio of production systems and applications.
@@ -80,11 +80,11 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-neon-cyan/50 transition-all duration-300 flex flex-col h-full"
+                            className="group relative p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-gold/50 transition-all duration-300 flex flex-col h-full"
                         >
                             <div className="mb-6 flex justify-between items-start">
-                                <div className="p-3 bg-neon-cyan/10 rounded-lg">
-                                    <Briefcase className="w-6 h-6 text-neon-cyan" />
+                                <div className="p-3 bg-gold/10 rounded-lg">
+                                    <Briefcase className="w-6 h-6 text-gold" />
                                 </div>
                                 <div className="flex gap-3">
                                     {project.githubUrl && (
@@ -110,7 +110,7 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
                                 {project.title}
                             </h3>
 
@@ -140,13 +140,13 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
-                            className="group p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-neon-cyan/20 transition-all duration-300 hover:translate-y-[-2px]"
+                            className="group p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-gold/20 transition-all duration-300 hover:bg-white/[0.04]"
                         >
                             <div className="flex items-start justify-between mb-3">
-                                <h4 className="text-base font-semibold text-slate-200 group-hover:text-neon-cyan transition-colors">
+                                <h4 className="text-base font-semibold text-slate-200 group-hover:text-gold transition-colors">
                                     {project.title}
                                 </h4>
-                                <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-neon-cyan transition-colors" />
+                                <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-gold transition-colors" />
                             </div>
                             <p className="text-slate-500 text-sm line-clamp-2">
                                 {project.description}
