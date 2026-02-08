@@ -18,25 +18,62 @@ const inter = Inter({
 export const metadata: Metadata = {
     title: `${resumeData.personalInfo.name} | ${resumeData.personalInfo.role}`,
     description: resumeData.personalInfo.summary,
-    keywords: ["Lead Data Scientist", "AI Architect", "Generative AI", "LLM", "Machine Learning", "Dallas", "USA", "RAG", "Vector Search", "Python", "Data Engineering"],
-    icons: {
-        icon: '/favicon.ico',
-    },
+    keywords: [
+        "Senior Full-Stack Engineer",
+        "React",
+        "Next.js",
+        "Angular",
+        "Node.js",
+        "Software Architect",
+        "Cloud Engineering",
+        "AWS",
+        "Dallas",
+        "Frontend Architecture",
+        "System Design"
+    ],
+    authors: [{ name: resumeData.personalInfo.name }],
     openGraph: {
         title: `${resumeData.personalInfo.name} | ${resumeData.personalInfo.role}`,
         description: resumeData.personalInfo.summary,
-        url: resumeData.personalInfo.website,
+        url: 'https://gobhargavi.github.io', // Assuming this is the production URL
         siteName: `${resumeData.personalInfo.name} Portfolio`,
+        locale: 'en_US',
+        type: 'website',
         images: [
             {
-                url: resumeData.personalInfo.image,
-                width: 800,
-                height: 600,
+                url: '/og-image.jpg', // Placeholder, user should add this
+                width: 1200,
+                height: 630,
+                alt: `${resumeData.personalInfo.name} - ${resumeData.personalInfo.role}`,
             },
         ],
-        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: `${resumeData.personalInfo.name} | ${resumeData.personalInfo.role}`,
+        description: resumeData.personalInfo.summary,
+        creator: '@GoBhargavi', // inferred from Github mostly
+        images: ['/og-image.jpg'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    icons: {
+        icon: '/assets/logo.png',
+        shortcut: '/assets/logo.png',
+        apple: '/assets/logo.png', // Optional, good for mobile
     },
 };
+
+import JsonLd from '@/components/JsonLd';
 
 export default function RootLayout({
     children,
@@ -49,6 +86,7 @@ export default function RootLayout({
                 className="font-inter bg-background text-foreground antialiased selection:bg-violet-500/30 selection:text-violet-200"
                 suppressHydrationWarning
             >
+                <JsonLd />
                 <div className="relative min-h-screen flex flex-col">
                     {/* Background Grid Pattern */}
                     <div className="fixed inset-0 z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>

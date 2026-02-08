@@ -118,7 +118,66 @@
   ],
   "publications": [],
   "talks": [],
-  "projects": [],
+  "projects": [
+    {
+      "title": "DiaFriend-1.0",
+      "description": "Production-ready Android application for diabetes management with 10,000+ downloads. Features blood glucose tracking, medication reminders, and a comprehensive companion toolset.",
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "FlutterFlow"
+      ],
+      "githubUrl": "https://github.com/GoBhargavi/DiaFriend-1.0",
+      "featured": true
+    },
+    {
+      "title": "Log Insights Platform",
+      "description": "AI-driven technical log analysis tool using Retrieval-Augmented Generation (RAG). Bridges raw system data with actionable engineering insights.",
+      "technologies": [
+        "Python",
+        "RAG",
+        "Flask",
+        "React"
+      ],
+      "githubUrl": "https://github.com/GoBhargavi/log-insights-platform",
+      "featured": true
+    },
+    {
+      "title": "ReLeafApp",
+      "description": "Recovery support application for substance abuse disorders, featuring a social support system and resource management. Built in collaboration with UMass Dartmouth.",
+      "technologies": [
+        "Flutter",
+        "Firebase",
+        "Android"
+      ],
+      "githubUrl": "https://github.com/GoBhargavi/ReLeafApp",
+      "featured": false
+    },
+    {
+      "title": "PVMA",
+      "description": "Predictive Visitor Management Application utilizing ARIMA and LSTM models to optimize facility traffic and planning.",
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "scikit-learn",
+        "Flask"
+      ],
+      "githubUrl": "https://github.com/GoBhargavi/PVMA",
+      "featured": false
+    },
+    {
+      "title": "Next.js Task Manager",
+      "description": "Modern full-stack task management application with a focus on UX and real-time updates.",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "githubUrl": "https://github.com/GoBhargavi/task-management-app",
+      "featured": false
+    }
+  ],
   "languages": [],
   "interests": [],
   "softSkills": []

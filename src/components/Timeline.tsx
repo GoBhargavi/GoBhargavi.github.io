@@ -1,101 +1,97 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Briefcase, MapPin, Building2, Calendar, ArrowRight } from 'lucide-react';
 import resumeData from '@/data/resumeData.json';
-import { MapPin, ExternalLink } from 'lucide-react';
 
 const Timeline = () => {
-    return (
-        <section id="experience" className="py-24 relative overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 bg-obsidian-950" />
+    const [expandedId, setExpandedId] = React.useState<number | null>(null);
 
-            <div className="max-w-5xl mx-auto px-6 relative z-10">
-                {/* Section Header */}
+    return (
+        <section id="experience" className="py-24 relative bg-obsidian-950 overflow-hidden snap-start">
+            <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="mb-16 text-center"
                 >
-                    <h2 className="text-4xl md:text-5xl font-black font-outfit text-white mb-4 tracking-tight">
-                        11-Year Journey
+                    <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-4">
+                        Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">Journey</span>
                     </h2>
                     <p className="text-slate-400 max-w-2xl mx-auto">
-                        From foundational engineering to staff-level architecture across three continents.
+                        A timeline of technical leadership and architectural impact.
                     </p>
                 </motion.div>
 
-                {/* Timeline */}
-                <div className="relative">
-                    {/* Vertical Line */}
-                    <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500/30 via-slate-700/30 to-transparent md:-translate-x-px" />
+                <div className="relative border-l-2 border-white/5 ml-3 md:ml-6 space-y-8">
+                    {resumeData.experience.map((job, index) => {
+                        const isExpanded = expandedId === index;
+                        return (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="relative pl-8 md:pl-12"
+                            >
+                                {/* Connector Dot */}
+                                <div
+                                    className={`absolute -left-[9px] top-6 w-5 h-5 rounded-full border-4 border-obsidian-950 z-10 transition-colors duration-300 ${isExpanded ? 'bg-gold shadow-[0_0_15px_rgba(212,175,55,0.5)]' : 'bg-slate-700 group-hover:bg-gold/50'}`}
+                                />
 
-                    <div className="flex flex-col gap-12">
-                        {resumeData.experience.map((job, index) => {
-                            const isLeft = index % 2 === 0;
-
-                            return (
                                 <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ duration: 0.5 }}
-                                    className={`relative flex flex-col md:flex-row gap-8 ${isLeft ? 'md:flex-row-reverse' : ''
-                                        }`}
+                                    layout
+                                    onClick={() => setExpandedId(isExpanded ? null : index)}
+                                    className={`relative bg-white/[0.02] border ${isExpanded ? 'border-gold/30 bg-white/[0.04]' : 'border-white/5 hover:border-gold/20'} rounded-2xl p-6 cursor-pointer overflow-hidden transition-colors duration-300 group`}
                                 >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute left-6 md:left-1/2 top-0 w-3 h-3 rounded-full bg-obsidian-950 border-2 border-teal-500 md:-translate-x-1.5 z-10" />
-
-                                    {/* Content Card */}
-                                    <div className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? 'md:pl-12' : 'md:pr-12 md:text-right'
-                                        }`}>
-                                        {/* Date */}
-                                        <div className="text-teal-400 text-sm font-semibold mb-2 tracking-wide">
-                                            {job.startDate} — {job.endDate}
+                                    <motion.div layout="position" className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                                        <div>
+                                            <h3 className={`text-xl font-bold font-outfit mb-1 transition-colors ${isExpanded ? 'text-gold' : 'text-white'}`}>
+                                                {job.position}
+                                            </h3>
+                                            <div className="flex items-center gap-2 text-slate-400 font-medium text-sm">
+                                                <Building2 size={16} className="text-gold/70" />
+                                                <span>{job.company}</span>
+                                            </div>
                                         </div>
-
-                                        {/* Position */}
-                                        <h3 className="text-2xl font-bold text-white mb-2 font-outfit">
-                                            {job.position}
-                                        </h3>
-
-                                        {/* Company & Location */}
-                                        <div className={`flex items-center gap-3 mb-4 text-sm ${isLeft ? '' : 'md:justify-end'
-                                            }`}>
-                                            {job.companyUrl ? (
-                                                <a
-                                                    href={job.companyUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1"
-                                                >
-                                                    {job.company}
-                                                    <ExternalLink size={12} />
-                                                </a>
-                                            ) : (
-                                                <span className="text-amber-400">{job.company}</span>
-                                            )}
-                                            <span className="text-slate-600">•</span>
-                                            <span className="text-slate-500 inline-flex items-center gap-1">
-                                                <MapPin size={12} />
-                                                {job.location}
-                                            </span>
+                                        <div className="text-left md:text-right">
+                                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full text-xs font-mono text-gold/80 border border-gold/10">
+                                                <Calendar size={12} />
+                                                {job.startDate} — {job.endDate}
+                                            </div>
                                         </div>
+                                    </motion.div>
 
-                                        {/* Description */}
-                                        <p className="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-slate-400 leading-relaxed">
-                                            {job.description}
-                                        </p>
-                                    </div>
+                                    <AnimatePresence>
+                                        {isExpanded && (
+                                            <motion.div
+                                                initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                                                animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
+                                                exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                                                className="border-t border-white/5 pt-4"
+                                            >
+                                                <p className="text-slate-300 leading-relaxed text-sm mb-4">
+                                                    {job.description}
+                                                </p>
+                                                <div className="flex items-center gap-2 text-xs text-slate-500">
+                                                    <MapPin size={12} />
+                                                    {job.location}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
 
-                                    {/* Spacer for alternating layout */}
-                                    <div className="hidden md:block md:w-1/2" />
+                                    {!isExpanded && (
+                                        <div className="mt-4 text-xs text-slate-500 flex items-center gap-1 group-hover:text-gold/70 transition-colors">
+                                            Read more <ArrowRight size={12} />
+                                        </div>
+                                    )}
                                 </motion.div>
-                            );
-                        })}
-                    </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>
