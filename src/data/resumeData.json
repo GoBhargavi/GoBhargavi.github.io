@@ -2,12 +2,11 @@
   "personalInfo": {
     "name": "Bhargavi Govardhanam",
     "title": "Senior Full-Stack Engineer",
-    "email": "bhargavig.594@gmail.com",
     "location": "Dallas-Fort Worth Metroplex",
     "github": "https://github.com/GoBhargavi",
     "linkedin": "https://www.linkedin.com/in/gobhargavi",
     "website": "",
-    "summary": "Senior Full-Stack Engineer with 11+ years architecting production systems across healthcare, fintech, and enterprise domains. I bridge the gap between complex business requirements and robust, scalable software—from leading micro-frontend architectures at Fortune 500 clients to developing award-winning healthcare applications. My recent work focuses on building intelligent interfaces and modern web platforms that serve millions.",
+    "summary": "Senior Full-Stack Engineer with 11+ years architecting production systems across healthcare, fintech, and enterprise domains. I bridge the gap between complex business requirements and robust, scalable software - from leading micro-frontend architectures at Fortune 500 clients to developing award-winning healthcare applications. My recent work focuses on building intelligent interfaces and modern web platforms that serve millions.",
     "role": "Senior Full-Stack Engineer"
   },
   "experience": [

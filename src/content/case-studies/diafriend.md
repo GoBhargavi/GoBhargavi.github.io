@@ -24,7 +24,7 @@ I built **DiaFriend**, a cross-platform mobile application using **Flutter** tha
     I chose Flutter to deliver a native-quality experience on both iOS and Android from a single codebase. This was crucial for rapid iteration and ensuring consistent accessibility features across devices.
 
 2.  **Serverless Backend with Firebase**:
-    To minimize infrastructure overhead and ensure real-time data synchronization for caregivers, I utilized Firebase Firestore. This allowed for seamless offline-first capabilities—critical for users with intermittent internet access.
+    To minimize infrastructure overhead and ensure real-time data synchronization for caregivers, I utilized Firebase Firestore. This allowed for seamless offline-first capabilities - critical for users with intermittent internet access.
 
 3.  **On-Device ML for Food Recognition**:
     Integrating Google ML Kit allowed users to log meals simply by taking photos. This reduced the friction of manual entry, a primary pain point in long-term adherence apps.
@@ -66,4 +66,4 @@ Every component was built with `Semantics` widgets to ensure full screen-reader 
 *   **Research Validation**: Data collected via the app (anonymized) contributed to nursing research on community health outcomes.
 
 ## Lessons Learned
-Building DiaFriend taught me that **technology is only as good as its accessibility**. Architecting for the "edge case" user—those with low tech literacy or visual impairments—resulted in a better product for everyone. It reinforced my belief that engineering decisions must be driven by deep empathy for the end user.
+Building DiaFriend taught me that **technology is only as good as its accessibility**. Architecting for the "edge case" user - those with low tech literacy or visual impairments - resulted in a better product for everyone. It reinforced my belief that engineering decisions must be driven by deep empathy for the end user.

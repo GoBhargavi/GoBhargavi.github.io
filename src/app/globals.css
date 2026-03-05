@@ -3,99 +3,114 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 10, 10, 12;
-    /* Obsidian 950 */
-    --background-end-rgb: 0, 0, 0;
+  --obsidian-900: #0f0f14;
+  --obsidian-950: #0a0a0f;
+  --signal-orange: #FF4D00;
+  --slate-deep: #1a1a1f;
 
-    /* Premium Gold Theme */
-    --gold: #D4AF37;
-    --gold-dim: #AA8C2C;
-    --neon-cyan: #00f2ff;
-    /* Kept as secondary tech accent */
-
-    --primary: var(--gold);
-
-    --font-outfit: 'Outfit', sans-serif;
-    --font-inter: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+  --transition-speed: 0.5s;
 }
 
-html {}
+.recruiter-mode {
+  --obsidian-900: #0f172a;
+  /* Darker Slate for text */
+  --obsidian-950: #FAFAFA;
+  --signal-orange: #2563EB;
+  --slate-deep: #F1F5F9;
+  --slate-400: #475569;
+  --slate-300: #64748B;
+}
 
-@media (min-width: 768px) {
-    html {
-        scroll-snap-type: y mandatory;
-    }
+[class*="recruiter-mode"] body {
+  background-image: none !important;
+}
+
+* {
+  @apply border-0 ring-0 outline-none rounded-none transition-all duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-    font-family: var(--font-inter);
-    overflow-x: hidden;
+  @apply bg-obsidian-950 text-slate-400 font-sans;
+  background-image: radial-gradient(circle at 1px 1px, #1a1a1f 1px, transparent 0);
+  background-size: 32px 32px;
 }
 
-@media (min-width: 768px) {
-    section {
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
+::selection {
+  background-color: var(--signal-orange);
+  color: white;
 }
 
 @layer base {
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply font-outfit text-white tracking-tight;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono text-white uppercase tracking-wider;
+  }
 }
 
 @layer components {
 
-    /* Glassmorphism Utilities */
-    .glass-panel {
-        @apply bg-white/[0.02] backdrop-blur-md border border-white/[0.05] shadow-xl;
-    }
+  /* Technical Panel */
+  .tech-panel {
+    @apply border border-white/5 backdrop-blur-sm p-6 transition-colors duration-500;
+    background-color: var(--slate-deep);
+  }
 
-    .glass-nav {
-        @apply bg-obsidian-900/80 backdrop-blur-xl border-b border-white/[0.05];
-    }
+  .tech-panel:hover {
+    border-color: var(--signal-orange);
+  }
 
-    /* Gold Glow Effects */
-    .text-glow {
-        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-    }
+  /* Signal Chip */
+  .signal-chip {
+    @apply px-3 py-1 border text-[10px] font-mono uppercase tracking-widest transition-all duration-300 cursor-pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--slate-300);
+  }
 
-    .border-glow {
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-    }
+  .recruiter-mode .signal-chip {
+    background-color: var(--slate-deep);
+    border-color: var(--slate-300);
+    color: var(--obsidian-900);
+    font-weight: 700;
+  }
 
-    /* Section Containers */
-    .section-container {
-        @apply max-w-7xl mx-auto px-6 relative z-10;
-    }
+  .signal-chip:hover {
+    @apply bg-signal-orange text-white border-signal-orange;
+  }
 
-    /* Animated Gradient Text */
-    .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-gold to-yellow-200;
-    }
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24 relative;
+  }
+
+  /* Vertical Label */
+  .vertical-label {
+    @apply absolute -left-4 top-0 h-full flex items-center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-obsidian-950;
+  @apply bg-obsidian-950;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+  @apply bg-white/10 hover:bg-signal-orange transition-colors;
 }

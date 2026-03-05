@@ -48,7 +48,7 @@ const Experience = () => {
                                         )}
                                     </div>
                                     <div className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-platinum-400 text-sm font-semibold whitespace-nowrap">
-                                        {exp.startDate} — {exp.endDate}
+                                        {exp.startDate} - {exp.endDate}
                                     </div>
                                 </div>
 

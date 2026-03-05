@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
-import SidebarNav from '@/components/SidebarNav';
+import About from '@/components/About';
 import Hero from '@/components/Hero';
 import LoadingScreen from '@/components/LoadingScreen';
 import FeaturedCaseStudy from '@/components/content/FeaturedCaseStudy';
@@ -34,12 +34,11 @@ export default function Home() {
             {!isLoading && (
                 <>
                     <Navbar />
-                    <SidebarNav />
                     <Hero />
+                    <About />
                     <Skills />
-                    <FeaturedCaseStudy />
-                    <Timeline />
                     <Projects />
+                    <Timeline />
                     <Mentorship />
                     <Education />
                     <Certifications />

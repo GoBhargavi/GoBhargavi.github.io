@@ -3,108 +3,89 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, FileText } from 'lucide-react';
+import { Menu, X, Github, Linkedin, FileText, UserCheck } from 'lucide-react';
 import resumeData from '@/data/resumeData.json';
+import { useRecruiter } from '@/context/RecruiterContext';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { isRecruiterMode, toggleRecruiterMode } = useRecruiter();
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const navLinks = [
-        { name: 'Experience', href: '/#experience' },
-        { name: 'Work', href: '/#featured-work' },
-        { name: 'Mentorship', href: '/#mentorship' },
-        { name: 'Contact', href: '/#footer' },
+        { name: 'About', href: '#about' },
+        { name: 'Skills', href: '#skills' },
+        { name: 'Projects', href: '#projects' },
+        { name: 'Experience', href: '#experience' },
+        { name: 'Contact', href: '#contact' },
     ];
 
     return (
-        <>
-            <motion.nav
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'h-16 glass-nav' : 'h-24 bg-transparent'
-                    }`}
-            >
-                <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-                    {/* Brand / Logo */}
-                    <a href="/" className="group relative flex items-center gap-3">
-                        <div className="relative w-10 h-10 overflow-hidden rounded-lg shadow-[0_0_15px_rgba(212,175,55,0.3)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-all duration-300">
-                            <Image
-                                src="/assets/logo.png"
-                                alt="Bhargavi Govardhanam Logo"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <span className="text-xl font-bold tracking-tight text-white group-hover:text-gold transition-colors">
-                            Bhargavi Govardhanam
-                        </span>
-                    </a>
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-obsidian-950/80 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-8'
+                }`}
+        >
+            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <Link href="/" className="font-mono text-white font-bold tracking-tighter text-xl">
+                    BG<span className="text-signal-orange">.</span>
+                </Link>
 
-                    {/* Desktop Social & Resume (Utility) */}
-                    <div className="hidden md:flex items-center gap-3">
-                        <a
-                            href={resumeData.personalInfo.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 text-slate-400 hover:text-white transition-colors"
+                <div className="hidden md:flex items-center gap-8">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400 hover:text-signal-orange transition-colors relative group"
                         >
-                            <Github size={20} />
-                        </a>
-                        <a
-                            href={resumeData.personalInfo.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 text-slate-400 hover:text-white transition-colors"
+                            {link.name}
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-signal-orange transition-all duration-300 group-hover:w-full" />
+                        </Link>
+                    ))}
+                </div>
+
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 mr-2">
+                        <span className={`hidden lg:inline font-mono text-[8px] uppercase tracking-[0.2em] transition-colors ${!isRecruiterMode ? 'text-signal-orange' : 'text-slate-400'}`}>
+                            Architect
+                        </span>
+                        <button
+                            onClick={toggleRecruiterMode}
+                            className={`relative w-10 h-5 rounded-full transition-colors duration-300 focus:outline-none ${isRecruiterMode ? 'bg-signal-orange' : 'bg-white/10'
+                                }`}
+                            title={isRecruiterMode ? "Switch to Architect Mode" : "Switch to Recruiter Mode"}
                         >
-                            <Linkedin size={20} />
-                        </a>
+                            <motion.div
+                                className="absolute top-1 left-1 w-3 h-3 bg-white rounded-full shadow-sm"
+                                animate={{ x: isRecruiterMode ? 20 : 0 }}
+                                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                            />
+                        </button>
+                        <span className={`hidden lg:inline font-mono text-[8px] uppercase tracking-[0.2em] transition-colors ${isRecruiterMode ? 'text-signal-orange' : 'text-slate-400'}`}>
+                            Recruiter
+                        </span>
                     </div>
 
-                    {/* Mobile Toggle */}
-                    <button
-                        className="md:hidden text-white p-2"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    <a
+                        href={resumeData.personalInfo.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 border transition-all ${isRecruiterMode
+                            ? 'border-slate-300 text-slate-600 hover:border-signal-orange hover:text-signal-orange'
+                            : 'border-white/10 text-white hover:border-signal-orange hover:text-signal-orange'
+                            }`}
                     >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                        Connect
+                    </a>
                 </div>
-            </motion.nav>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: '100vh' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="fixed inset-0 z-40 bg-obsidian-950 pt-24 px-6 md:hidden"
-                    >
-                        <div className="flex flex-col gap-6">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-2xl font-bold text-slate-300 hover:text-gold transition-colors"
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </>
+            </div>
+        </nav>
     );
 };
 

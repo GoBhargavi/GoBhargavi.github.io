@@ -2,158 +2,104 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { useRecruiter } from '@/context/RecruiterContext';
 
 const Projects = () => {
+    const { isRecruiterMode } = useRecruiter();
     const projects = [
         {
-            title: "ReLeafApp",
-            description: "Recovery support platform for substance abuse disorder, featuring peer support networks and crisis resource mapping.",
-            technologies: ["Flutter", "Firebase", "Android", "Web"],
-            impact: "UMass Research",
-            githubUrl: "https://github.com/GoBhargavi/ReLeafApp",
-            liveUrl: "",
+            title: "DiaFriend-1.0",
+            description: "Production Android application for diabetes management with 10,000+ downloads. Features blood glucose tracking and medication reminders.",
+            technologies: ["Flutter", "Dart", "Firebase", "GCP"],
+            impact: "10K+ DOWNLOADS",
+            githubUrl: "https://github.com/GoBhargavi/DiaFriend-1.0",
+            featured: true
+        },
+        {
+            title: "Log Insights Platform",
+            description: "AI-driven technical log analysis tool using RAG. Bridges raw system data with actionable engineering insights using LLMs.",
+            technologies: ["Python", "RAG", "FastAPI", "OpenAI"],
+            impact: "AI INFRASTRUCTURE",
+            githubUrl: "https://github.com/GoBhargavi/log-insights-platform",
             featured: true
         },
         {
             title: "PVMA",
-            description: "Predictive Visitor Management using ARIMA and LSTM models to optimize facility traffic analytics and planning.",
-            technologies: ["Python", "TensorFlow", "scikit-learn", "Flask"],
-            impact: "Master's Thesis",
+            description: "Predictive Visitor Management utilizes ARIMA and LSTM models to optimize facility traffic and planning.",
+            technologies: ["Python", "TensorFlow", "Scikit-learn"],
+            impact: "ML RESEARCH",
             githubUrl: "https://github.com/GoBhargavi/PVMA",
-            liveUrl: "",
             featured: true
-        },
-        {
-            title: "In-Progress: Log Platform",
-            description: "Implementing localized RAG for technical log synthesis and root-cause analysis suggesting solutions via LLMs.",
-            technologies: ["Python", "RAG", "Ollama", "React"],
-            impact: "AI Infrastructure",
-            githubUrl: "https://github.com/GoBhargavi/log-insights-platform",
-            liveUrl: "",
-            featured: true
-        },
-        {
-            title: "Modern Task Manager",
-            description: "A collaborative task management tool built with high-performance React patterns and real-time state sync.",
-            technologies: ["Next.js", "TypeScript", "Tailwind", "Prisma"],
-            impact: "Personal Utility",
-            githubUrl: "https://github.com/GoBhargavi/task-management-app",
-            liveUrl: "",
-            featured: false
-        },
-        {
-            title: "Fastify Event Service",
-            description: "High-throughput event processing backend service designed for scalability and minimal latency.",
-            technologies: ["Node.js", "Fastify", "Redis", "TypeScript"],
-            impact: "Backend Pattern",
-            githubUrl: "https://github.com/GoBhargavi/fastify-event-service",
-            liveUrl: "",
-            featured: false
         }
     ];
 
-    const featuredProjects = projects.filter(p => p.featured);
-    const otherProjects = projects.filter(p => !p.featured);
-
     return (
-        <section id="projects" className="py-24 relative bg-obsidian-950">
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-16"
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-6">
-                        Featured <span className="text-gradient">Work</span>
-                    </h2>
-                    <p className="text-slate-400 max-w-2xl text-lg">
-                        Highlights from my portfolio of production systems and applications.
-                    </p>
-                </motion.div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                    {featuredProjects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group relative p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-gold/50 transition-all duration-300 flex flex-col h-full"
-                        >
-                            <div className="mb-6 flex justify-between items-start">
-                                <div className="p-3 bg-gold/10 rounded-lg">
-                                    <Briefcase className="w-6 h-6 text-gold" />
-                                </div>
-                                <div className="flex gap-3">
-                                    {project.githubUrl && (
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-full transition-colors"
-                                        >
-                                            <Github size={18} />
-                                        </a>
-                                    )}
-                                    {project.liveUrl && (
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-full transition-colors"
-                                        >
-                                            <ExternalLink size={18} />
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">
-                                {project.title}
-                            </h3>
-
-                            <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                                {project.description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 mt-auto">
-                                {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                                    <span
-                                        key={techIndex}
-                                        className="px-2 py-1 bg-white/5 text-slate-400 text-xs font-mono rounded border border-white/5"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
+        <section id="projects" className="section-container">
+            {!isRecruiterMode && (
+                <div className="vertical-label font-mono text-[10px] text-slate-700 uppercase tracking-[0.5em]">
+                    Deployments / R&D
                 </div>
+            )}
 
-                <div className="grid md:grid-cols-3 gap-6">
-                    {otherProjects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            className="group p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-gold/20 transition-all duration-300 hover:bg-white/[0.04]"
-                        >
-                            <div className="flex items-start justify-between mb-3">
-                                <h4 className="text-base font-semibold text-slate-200 group-hover:text-gold transition-colors">
-                                    {project.title}
-                                </h4>
-                                <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-gold transition-colors" />
+            <div className={`mb-16 ${isRecruiterMode ? 'text-center' : ''}`}>
+                <h2 className={`text-4xl md:text-5xl mb-4 ${isRecruiterMode ? 'text-slate-900 font-sans font-bold' : ''}`}>
+                    {isRecruiterMode ? 'Featured Projects' : 'Featured Projects'}
+                </h2>
+                <p className={`${isRecruiterMode ? 'text-slate-500 font-sans' : 'text-slate-500 font-mono text-sm uppercase tracking-widest'}`}>
+                    {isRecruiterMode ? 'Production Software & Machine Learning Prototypes' : 'Production Systems & Research Prototype'}
+                </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projects.map((project, idx) => (
+                    <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className={`group relative flex flex-col h-full border transition-all duration-500 p-8 ${isRecruiterMode
+                                ? 'bg-white border-slate-200 hover:shadow-xl hover:border-signal-orange/50'
+                                : 'bg-obsidian-900 border-white/5 hover:border-signal-orange/30'
+                            }`}
+                    >
+                        <div className="flex justify-between items-start mb-8">
+                            <div className="text-[10px] font-mono text-signal-orange uppercase tracking-widest bg-signal-orange/5 px-2 py-1">
+                                {project.impact}
                             </div>
-                            <p className="text-slate-500 text-sm line-clamp-2">
-                                {project.description}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
+                            <div className="flex gap-4">
+                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors">
+                                    <Github size={18} />
+                                </a>
+                                <ArrowUpRight size={18} className="text-slate-700 group-hover:text-signal-orange transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+                            </div>
+                        </div>
+
+                        <h3 className={`text-2xl font-bold mb-4 transition-colors ${isRecruiterMode ? 'text-slate-900 font-sans' : 'text-white group-hover:text-signal-orange'}`}>
+                            {project.title}
+                        </h3>
+
+                        <p className={`text-sm leading-relaxed mb-8 flex-grow ${isRecruiterMode ? 'text-slate-600 font-sans' : 'text-slate-400'}`}>
+                            {project.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech, tIdx) => (
+                                <span key={tIdx} className="text-[10px] font-mono text-slate-600 uppercase border border-white/5 px-2 py-1">
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* Hover Decorative Element */}
+                        {!isRecruiterMode && (
+                            <div className="absolute bottom-0 right-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="absolute bottom-2 right-2 w-4 h-[1px] bg-signal-orange" />
+                                <div className="absolute bottom-2 right-2 w-[1px] h-4 bg-signal-orange" />
+                            </div>
+                        )}
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

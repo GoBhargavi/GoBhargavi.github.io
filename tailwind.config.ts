@@ -9,49 +9,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // New specialized palette
         obsidian: {
-          800: '#1a1b26', // Darker navy
-          900: '#0f111a', // Deep navy background
-          950: '#0a0a0c', // Almost black
+          900: 'var(--obsidian-900)',
+          950: 'var(--obsidian-950)',
         },
-        neon: {
-          cyan: '#00f2ff', // Primary accent
-          blue: '#00c3ff', // Secondary blue
-          purple: '#9d00ff', // Tertiary accent
-        },
-        gold: {
-          DEFAULT: '#D4AF37', // Matches globals.css --gold
-          400: '#ffd700',
-          500: '#ffb700',
-          dim: '#AA8C2C', // Matches globals.css --gold-dim
-        },
+        'signal-orange': 'var(--signal-orange)',
+        'slate-deep': 'var(--slate-deep)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        mono: ['var(--font-fira-code)', 'monospace'],
-        outfit: ['var(--font-outfit)', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
+        technical: ['IBM Plex Mono', 'monospace'],
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'glass-gradient': 'linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+        'dot-pattern': 'radial-gradient(circle, #333 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'dot-size': '24px 24px',
       },
       animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'fade-in-staggered': 'fadeIn 0.5s ease-out forwards',
+        'glitch': 'glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(0, 242, 255, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(0, 242, 255, 0.6)' },
-        }
-      }
+        glitch: {
+          '0%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-2px, 2px)' },
+          '40%': { transform: 'translate(-2px, -2px)' },
+          '60%': { transform: 'translate(2px, 2px)' },
+          '80%': { transform: 'translate(2px, -2px)' },
+          '100%': { transform: 'translate(0)' },
+        },
+      },
     },
   },
   plugins: [],
