@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: `${resumeData.personalInfo.name} | ${resumeData.personalInfo.role}`,
+    title: `Bhargavi Govardhanam | AI Architect`,
     description: resumeData.personalInfo.summary,
     keywords: [
         "AI Architect",
