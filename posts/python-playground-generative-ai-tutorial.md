@@ -9,27 +9,27 @@ description: "Learn Python through hands-on projects! This beginner-friendly gui
 
 ## Introduction
 
-Imagine creating a text adventure game that writes itself, crafting stories that surprise even you, the developer. Or picture building a digital artist that transforms your words into vivid images. These aren't far-fetched sci-fi scenarios—they're real possibilities when you combine Python programming with generative AI.
+Imagine creating a text adventure game that writes itself, crafting stories that surprise even you, the developer. Or picture building a digital artist that transforms your words into vivid images. These aren't far-fetched sci-fi scenarios-they're real possibilities when you combine Python programming with generative AI.
 
-Welcome to your Python playground, where we're tossing aside dusty textbooks and diving into learning through creation. If you've ever dozed off during a programming tutorial or felt overwhelmed by endless syntax explanations, this guide is your wake-up call. We're going to learn Python the way your brain actually wants to learn—by building something awesome.
+Welcome to your Python playground, where we're tossing aside dusty textbooks and diving into learning through creation. If you've ever dozed off during a programming tutorial or felt overwhelmed by endless syntax explanations, this guide is your wake-up call. We're going to learn Python the way your brain actually wants to learn-by building something awesome.
 
-Our vehicle for this learning journey? An AI-powered text adventure generator that will grow in sophistication as your Python skills develop. By the end of this guide, you'll have created a game that leverages generative AI to produce unique storylines, characters, and challenges—all while mastering Python fundamentals without the yawn-inducing theory overload.
+Our vehicle for this learning journey? An AI-powered text adventure generator that will grow in sophistication as your Python skills develop. By the end of this guide, you'll have created a game that leverages generative AI to produce unique storylines, characters, and challenges-all while mastering Python fundamentals without the yawn-inducing theory overload.
 
-Whether you're a complete beginner who thinks "Python" is just a snake, or someone who's tinkered with code but wants to level up for the AI revolution, this guide meets you where you are. We'll cover essential Python concepts like variables, control structures, and functions, but always in the context of our project—no abstract examples about calculating the area of a triangle or counting vowels in a string (unless our adventure hero is trapped in a geometric dungeon or casting vowel-counting spells).
+Whether you're a complete beginner who thinks "Python" is just a snake, or someone who's tinkered with code but wants to level up for the AI revolution, this guide meets you where you are. We'll cover essential Python concepts like variables, control structures, and functions, but always in the context of our project-no abstract examples about calculating the area of a triangle or counting vowels in a string (unless our adventure hero is trapped in a geometric dungeon or casting vowel-counting spells).
 
-The world of generative AI is exploding with possibilities, and Python is your golden ticket to this revolution. Companies are scrambling to find developers who understand both programming fundamentals and AI concepts. By learning Python with a focus on generative AI applications, you're not just picking up a programming language—you're positioning yourself at the intersection of two of the hottest fields in technology.
+The world of generative AI is exploding with possibilities, and Python is your golden ticket to this revolution. Companies are scrambling to find developers who understand both programming fundamentals and AI concepts. By learning Python with a focus on generative AI applications, you're not just picking up a programming language-you're positioning yourself at the intersection of two of the hottest fields in technology.
 
-So grab your favorite beverage, clear some space on your desk (and in your brain), and prepare to embark on a Python learning adventure that's actually fun. No prior programming experience required—just bring your curiosity and willingness to experiment. Things might break, bugs will appear (the digital kind, not the creepy-crawly ones), and you'll occasionally want to throw your computer out the window—but that's all part of the authentic programming experience we're embracing.
+So grab your favorite beverage, clear some space on your desk (and in your brain), and prepare to embark on a Python learning adventure that's actually fun. No prior programming experience required-just bring your curiosity and willingness to experiment. Things might break, bugs will appear (the digital kind, not the creepy-crawly ones), and you'll occasionally want to throw your computer out the window-but that's all part of the authentic programming experience we're embracing.
 
 Ready to transform from Python novice to AI game developer? Let's dive in and start coding our adventure!
 
 ## Setting Up Your Python Environment
 
-Before we dive into creating our AI-powered text adventure, let's get your Python environment ready for action. Think of this as gathering your tools before embarking on an epic quest—except instead of swords and shields, we're collecting code editors and interpreters.
+Before we dive into creating our AI-powered text adventure, let's get your Python environment ready for action. Think of this as gathering your tools before embarking on an epic quest-except instead of swords and shields, we're collecting code editors and interpreters.
 
 ### Installing Python
 
-First things first: you need Python on your computer. It's like trying to bake cookies without an oven—technically possible but unnecessarily complicated and likely to end in tears.
+First things first: you need Python on your computer. It's like trying to bake cookies without an oven-technically possible but unnecessarily complicated and likely to end in tears.
 
 1. Visit [python.org/downloads](https://python.org/downloads)
 2. Download the latest version for your operating system (Windows, macOS, or Linux)
@@ -41,7 +41,7 @@ To verify your installation, open your command prompt or terminal and type:
 python --version
 ```
 
-If you see something like `Python 3.10.x`, you're good to go! If you get an error, try using `python3` instead of `python`—sometimes they're like twins with different names.
+If you see something like `Python 3.10.x`, you're good to go! If you get an error, try using `python3` instead of `python`-sometimes they're like twins with different names.
 
 ### Setting Up a Code Editor
 
@@ -104,7 +104,7 @@ source venv/bin/activate
 
 When activated, you'll see `(venv)` at the beginning of your terminal prompt, like a little badge saying "I'm being responsible with my dependencies!"
 
-Now let's install our first package—we'll need it later for our AI integration:
+Now let's install our first package-we'll need it later for our AI integration:
 
 ```bash
 pip install requests
@@ -292,7 +292,7 @@ if victory:
     print(f"You found 15 gold coins! Total gold: {gold_coins}")
 ```
 
-Notice the triple-quoted strings after each function definition? Those are docstrings—documentation that explains what the function does. They're good practice and help other developers (or future you) understand your code.
+Notice the triple-quoted strings after each function definition? Those are docstrings-documentation that explains what the function does. They're good practice and help other developers (or future you) understand your code.
 
 ### Data Structures: Organizing Game Information
 
@@ -1202,7 +1202,7 @@ class GenerativeAI:
             "quest_objective": [
                 "You must recover the Celestial Fragments, scattered when the Star Temple was destroyed. Each piece resonates with a different element and must be purified in its corresponding shrine before reassembly. The completed artifact will reveal the truth behind the realm's fading magic.",
                 "The ancient boundary stones marking the kingdom's borders have been systematically defaced, weakening the protective enchantments laid by the realm's founders. You must restore each marker with the appropriate runes, working against unknown saboteurs who continue their work in the shadows.",
-                "A diplomatic crisis looms between the mountain clans and forest kingdoms, with both sides preparing for war over suspected treachery. You must identify the true culprit—a third party sowing discord—by collecting evidence from crime scenes while navigating increasingly hostile territory.",
+                "A diplomatic crisis looms between the mountain clans and forest kingdoms, with both sides preparing for war over suspected treachery. You must identify the true culprit-a third party sowing discord-by collecting evidence from crime scenes while navigating increasingly hostile territory.",
                 "The seasonal rains have failed for the third year, and unnatural drought threatens the region. Your investigation reveals a corrupted water elemental bound in the central lake's depths. Freeing it requires gathering purification components from increasingly dangerous environments affected by the spreading corruption."
             ]
         }

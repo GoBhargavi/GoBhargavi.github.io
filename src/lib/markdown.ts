@@ -16,7 +16,7 @@ export interface CaseStudyData {
     impact: string;
     heroImage?: string;
     contentHtml: string;
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 export function getCaseStudySlugs() {
@@ -42,8 +42,8 @@ export async function getCaseStudyData(slug: string): Promise<CaseStudyData> {
     return {
         slug: realSlug,
         contentHtml,
-        ...(matterResult.data as any),
-    };
+        ...(matterResult.data as Record<string, unknown>),
+    } as CaseStudyData;
 }
 
 export function getAllCaseStudies(): Omit<CaseStudyData, 'contentHtml'>[] {
@@ -56,10 +56,14 @@ export function getAllCaseStudies(): Omit<CaseStudyData, 'contentHtml'>[] {
 
         return {
             slug: realSlug,
-            ...(matterResult.data as any),
-        };
+            ...(matterResult.data as Record<string, unknown>),
+        } as Omit<CaseStudyData, 'contentHtml'>;
     });
 
     // Sort case studies by date
-    return allCaseStudies.sort((a, b) => (a.date < b.date ? 1 : -1));
+    return allCaseStudies.sort((a, b) => {
+        const dateA = a.date as string || '';
+        const dateB = b.date as string || '';
+        return dateA < dateB ? 1 : -1;
+    });
 }

@@ -37,8 +37,8 @@ const FeaturedCaseStudy = () => {
                         Engineered for <span className="text-gradient">Impact</span>
                     </h2>
                     <p className="text-slate-400 max-w-2xl text-lg font-light leading-relaxed">
-                        I don't just write code. I solve complex business problems with robust technical architecture.
-                        Here are a few diverse challenges I've tackled.
+                        I don&apos;t just write code. I solve complex business problems with robust technical architecture.
+                        Here are a few diverse challenges I&apos;ve tackled.
                     </p>
                 </div>
 

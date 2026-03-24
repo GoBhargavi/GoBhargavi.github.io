@@ -28,39 +28,49 @@ const Authorship = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                    {resumeData.publications.map((pub, index) => (
-                        <motion.a
-                            key={index}
-                            href={pub.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group block p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-gold-glow/30 transition-all hover:-translate-y-1 hover:shadow-xl"
-                        >
-                            <div className="flex justify-between items-start mb-4">
-                                <div className="p-3 rounded-lg bg-gold-glow/10 text-gold-glow group-hover:bg-gold-glow group-hover:text-black transition-colors">
-                                    <BookOpen size={24} />
-                                </div>
-                                <ExternalLink className="text-gray-500 group-hover:text-gold-glow transition-colors" size={20} />
-                            </div>
+                <div className="grid gap-6">
+                    {((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications && ((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications.length > 0 ? (
+                        ((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications?.map((pub, index: number) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="group"
+                            >
+                                <a
+                                    href={pub.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-gold-glow/30 transition-all hover:-translate-y-1 hover:shadow-xl"
+                                >
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="p-3 rounded-lg bg-gold-glow/10 text-gold-glow group-hover:bg-gold-glow group-hover:text-black transition-colors">
+                                            <BookOpen size={24} />
+                                        </div>
+                                        <ExternalLink className="text-gray-500 group-hover:text-gold-glow transition-colors" size={20} />
+                                    </div>
 
-                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-glow transition-colors">
-                                {pub.title}
-                            </h3>
-                            <div className="flex items-center gap-2 text-sm text-gold-shimmer mb-4">
-                                <span>{pub.publisher}</span>
-                                <span>•</span>
-                                <span>{pub.year}</span>
-                            </div>
-                            <p className="text-gray-400 leading-relaxed text-sm">
-                                {pub.description}
-                            </p>
-                        </motion.a>
-                    ))}
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-glow transition-colors">
+                                        {pub.title}
+                                    </h3>
+                                    <div className="flex items-center gap-2 text-sm text-gold-shimmer mb-4">
+                                        <span>{pub.source}</span>
+                                        <span>•</span>
+                                        <span>{pub.date}</span>
+                                    </div>
+                                    <p className="text-gray-400 leading-relaxed text-sm">
+                                        {pub.description}
+                                    </p>
+                                </a>
+                            </motion.div>
+                        ))
+                    ) : (
+                        <div className="text-center py-12">
+                            <p className="text-gray-400 text-lg">Publications coming soon...</p>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>

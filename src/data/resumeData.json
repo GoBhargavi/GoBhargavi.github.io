@@ -1,227 +1,182 @@
 {
   "personalInfo": {
     "name": "Bhargavi Govardhanam",
-    "title": "Senior Full-Stack Engineer",
-    "location": "Dallas-Fort Worth Metroplex",
+    "title": "AI Architect and Full Stack Engineer",
     "github": "https://github.com/GoBhargavi",
     "linkedin": "https://www.linkedin.com/in/gobhargavi",
     "website": "",
-    "summary": "Senior Full-Stack Engineer with 11+ years architecting production systems across healthcare, fintech, and enterprise domains. I bridge the gap between complex business requirements and robust, scalable software - from leading micro-frontend architectures at Fortune 500 clients to developing award-winning healthcare applications. My recent work focuses on building intelligent interfaces and modern web platforms that serve millions.",
-    "role": "Senior Full-Stack Engineer"
+    "summary": "AI Architect and Full Stack Engineer with 11 years of experience delivering production-grade intelligent systems across healthcare, fintech, and enterprise domains. Equal depth on both sides: architecting LLM pipelines, RAG systems, and multi-agent agentic workflows with LangChain and LangGraph, and engineering high-performance React and FastAPI full stack applications deployed on Azure and AWS. Track record includes ML prototypes for fraud detection, credit risk, and predictive analytics.",
+    "role": "AI Architect and Full Stack Engineer"
   },
   "experience": [
     {
-      "company": "Point B Communications",
-      "position": "Lead Frontend Engineer",
-      "startDate": "Nov 2023",
+      "company": "RapidsGroup, USA",
+      "position": "AI Full Stack Engineer",
+      "startDate": "Jan 2026",
       "endDate": "Present",
-      "description": "Architecting a core Angular 17 application with micro-frontends for senior living healthcare. Reduced bundle sizes by 40% through code splitting and lazy loading. Implemented intelligent caregiver matching features, improving placement accuracy by 35%.",
-      "companyUrl": "",
-      "location": "Dallas, TX"
+      "description": "Architected and delivered an end-to-end Agentic RAG platform for a lending management modernization initiative, spanning a React 18 frontend and a Python FastAPI microservices backend deployed on Azure Kubernetes Service (AKS). Designed a multi-agent orchestration layer using LangChain and LangGraph, enabling autonomous document analysis, financial data extraction, and context-aware decision support across loan origination workflows.",
+      "companyUrl": ""
     },
     {
-      "company": "UMass Dartmouth",
-      "position": "Sr. Frontend Engineer & Researcher",
-      "startDate": "Nov 2021",
-      "endDate": "Aug 2023",
-      "description": "Sole developer of DiaFriend (10,000+ downloads on Google Play Store), a Flutter-based diabetes management tool recognized by UMass News. Revamped university library portal using React 18 and GraphQL. Conducted ML research on predictive algorithms for my Master's thesis.",
-      "companyUrl": "https://www.umassd.edu/",
-      "location": "Dartmouth, MA"
+      "company": "Point B Communications, USA",
+      "position": "Full Stack Engineer",
+      "startDate": "Nov 2023",
+      "endDate": "Dec 2025",
+      "description": "Designed and integrated a GenAI-powered RAG chatbot for a healthcare and senior living platform, enabling natural language queries over resident care plans and health records. Built core application architecture using React 18 with functional components, Hooks, and Context API. Implemented complex multi-step forms reducing onboarding time by 40% and improving accuracy.",
+      "companyUrl": ""
     },
     {
       "company": "Tazapay",
-      "position": "Sr. Software Engineer",
-      "startDate": "Nov 2020",
-      "endDate": "Jul 2021",
-      "description": "Built secure fintech onboarding flows handling $50M+ in cross-border payments. Implemented React & TypeScript frontend with 99.9% uptime. Ensured PCI-DSS compliance and data integrity for high-stakes financial transactions.",
-      "companyUrl": "",
-      "location": "Singapore (Remote)"
+      "position": "Lead Engineer",
+      "startDate": "Nov 2021",
+      "endDate": "Oct 2023",
+      "description": "Led the architecture and development of a cross-border escrow platform's Vue.js frontend, implementing robust KYC workflows and seamless API integration with Go-based backend services. Spearheaded the migration from Vue 2 to Vue 3, improving system performance and maintainability while ensuring production stability on Azure Kubernetes Service.",
+      "companyUrl": ""
     },
     {
-      "company": "Hotfoot Technology Solutions",
-      "position": "Frontend Developer",
-      "startDate": "Jul 2019",
-      "endDate": "Oct 2020",
-      "description": "Delivered a Loan Origination module processing 10,000+ daily transactions using Vue.js and Spring Boot. Owned the complete UI architecture for high-traffic processing systems serving major Indian banks.",
-      "companyUrl": "",
-      "location": "Chennai, India"
+      "company": "Hotfoot",
+      "position": "Staff Lead Developer",
+      "startDate": "Apr 2019",
+      "endDate": "Oct 2021",
+      "description": "Architected and led development of banking and loan origination UI systems using React and Vue, implementing role-based access controls and multi-step workflow systems. Built comprehensive file upload and validation platforms, optimized performance through lazy loading and code splitting, and led a team of 6 engineers while training 10+ new hires on Azure deployment best practices.",
+      "companyUrl": ""
     },
     {
-      "company": "Cognizant Technology Solutions",
-      "position": "Application Programmer Analyst",
+      "company": "Cognizant Technology Solutions, India",
+      "position": "Programmer Analyst",
       "startDate": "Nov 2015",
       "endDate": "Apr 2019",
-      "description": "Built HIPAA-compliant portals for AstraZeneca serving 500,000+ healthcare professionals. Developed high-volume e-commerce modules for Walmart handling millions of daily transactions. Led frontend modernization initiatives across 3 enterprise clients.",
-      "companyUrl": "",
-      "location": "Chennai, India"
+      "description": "Developed enterprise web applications using React and AngularJS for Fortune 500 clients (Walmart, JB Hunt, AstraZeneca). Built HIPAA-compliant healthcare portals and high-performance logistics dashboards.",
+      "companyUrl": ""
     }
   ],
+  "enterpriseAiWork": [
+    {
+      "title": "Agentic RAG Lending Platform",
+      "architecture": "React 18 Frontend, FastAPI Microservices, Azure Kubernetes Service (AKS)",
+      "aiComponents": "Multi-agent orchestration via LangChain/LangGraph, Autonomous Document Analysis",
+      "impact": "Context-aware decision support across complex loan origination workflows"
+    },
+    {
+      "title": "Healthcare GenAI Chatbot",
+      "architecture": "React 18 Runtime, Functional Components, Context API",
+      "aiComponents": "RAG pipeline querying over resident care plans and health records",
+      "impact": "Natural language discovery engine embedded in healthcare and senior living platforms"
+    }
+  ],
+  "technicalDepth": {
+    "RAG_Pipeline_Approach": "Retrieval Augmented Generation tailored for low latency vs context volume tradeoffs.",
+    "Hallucination_Handling": "Strict instruction sets, guardrails, and reference validation.",
+    "Engineering_Practices": "Rigorous focus on performance optimizations, extensive test coverage (E2E/Integration), and security by default via RBAC, JWT, and HIPAA best practices."
+  },
   "education": [
     {
       "institution": "University of Massachusetts Dartmouth",
-      "degree": "Master of Science - MS, Computer Science",
-      "startDate": "2021",
-      "endDate": "2023",
-      "description": "Thesis: Predictive algorithms using ARIMA and LSTM models. Developed tools for community health research. Created DiaFriend app as part of nursing research collaboration.",
-      "institutionUrl": "https://www.umassd.edu/"
-    },
-    {
-      "institution": "Anna University Chennai",
-      "degree": "Bachelor of Engineering (B.E.), Computer Science",
-      "startDate": "2011",
-      "endDate": "2015",
-      "description": "Foundation in algorithms, data structures, and software engineering principles.",
+      "degree": "Master of Science in Computer and Information Systems",
+      "startDate": "Sep 2021",
+      "endDate": "Aug 2023",
+      "description": "Thesis: Predictive algorithms. Developed DiaFriend healthcare app.",
       "institutionUrl": ""
     }
   ],
   "certifications": [
     {
-      "name": "AWS Certified Solutions Architect Associate",
+      "name": "Generative AI Leader",
+      "date": "Google Cloud",
+      "description": "Leadership in GenAI implementation and strategy"
+    },
+    {
+      "name": "Ultimate AWS Certified Solutions Architect Associate",
       "date": "2026",
-      "description": "Cloud architecture, scalability patterns, and AWS services"
-    },
-    {
-      "name": "Python for Data Science & Machine Learning",
-      "date": "2024",
-      "description": "NumPy, Pandas, Scikit-learn, TensorFlow fundamentals"
+      "description": ""
     }
   ],
-  "honorsAwards": [
-    {
-      "name": "Featured in UMass Dartmouth News",
-      "date": "2023",
-      "description": "Recognized for launching DiaFriend diabetes management app impacting the SouthCoast Portuguese community"
-    },
-    {
-      "name": "Innovation & Entrepreneurship Recognition",
-      "date": "2023",
-      "description": "Acknowledged by UMass Center for Innovation for technical contributions to nursing research"
-    }
-  ],
+  "honorsAwards": [],
   "skills": [
+    "LangChain",
+    "LangGraph",
+    "RAG Pipelines",
+    "Agentic Workflows",
+    "Vector Search",
+    "scikit-learn",
+    "pandas",
+    "Predictive Analytics",
     "React 18",
-    "Angular 17",
-    "TypeScript",
     "Next.js",
-    "Vue 3",
-    "Python",
+    "TypeScript",
     "FastAPI",
+    "Python",
     "Node.js",
-    "GraphQL",
-    "PostgreSQL",
-    "MongoDB",
-    "AWS",
+    "Azure (AKS)",
     "Docker",
     "Kubernetes",
-    "CI/CD"
+    "SQL",
+    "HIPAA Compliance",
+    "System Design"
   ],
-  "publications": [],
-  "talks": [],
   "projects": [
     {
       "title": "DiaFriend-1.0",
-      "description": "Production-ready Android application for diabetes management with 10,000+ downloads. Features blood glucose tracking, medication reminders, and a comprehensive companion toolset.",
+      "problem": "Diabetes management required disconnected, manual data entry leading to high cognitive load during sensitive healthcare periods.",
+      "solution": "Architected a mobile-first Flutter application streamlining structured data workflows for blood glucose tracking and medication adherence.",
       "technologies": [
         "Flutter",
         "Dart",
         "Firebase",
-        "FlutterFlow"
+        "Mobile-first Architecture"
       ],
       "githubUrl": "https://github.com/GoBhargavi/DiaFriend-1.0",
-      "featured": true
-    },
-    {
-      "title": "Log Insights Platform",
-      "description": "AI-driven technical log analysis tool using Retrieval-Augmented Generation (RAG). Bridges raw system data with actionable engineering insights.",
-      "technologies": [
-        "Python",
-        "RAG",
-        "Flask",
-        "React"
-      ],
-      "githubUrl": "https://github.com/GoBhargavi/log-insights-platform",
-      "featured": true
+      "impact": "Production-ready healthcare UX handling complex structured data workflows."
     },
     {
       "title": "ReLeafApp",
-      "description": "Recovery support application for substance abuse disorders, featuring a social support system and resource management. Built in collaboration with UMass Dartmouth.",
+      "problem": "Substance abuse disorder patients required a reliable, non-judgmental tracking and behavioral mapping application.",
+      "solution": "Built a reliable, sensitive domain UX using Flutter and Firebase prioritizing behavioral health workflows and user safety.",
       "technologies": [
         "Flutter",
         "Firebase",
-        "Android"
+        "Behavioral Flow"
       ],
       "githubUrl": "https://github.com/GoBhargavi/ReLeafApp",
-      "featured": false
+      "impact": "Delivered high-reliability UX mapping specifically to sensitive healthcare domain workflows."
     },
     {
-      "title": "PVMA",
-      "description": "Predictive Visitor Management Application utilizing ARIMA and LSTM models to optimize facility traffic and planning.",
+      "title": "PVMA (Predictive Visitor Management)",
+      "problem": "Facilities needed dynamic forecasting of visitor traffic to prevent bottlenecks and under-staffing.",
+      "solution": "Engineered a predictive system utilizing ARIMA and LSTM machine learning pipelines for automated decision support.",
       "technologies": [
         "Python",
         "TensorFlow",
-        "scikit-learn",
-        "Flask"
+        "scikit-learn"
       ],
       "githubUrl": "https://github.com/GoBhargavi/PVMA",
-      "featured": false
+      "impact": "Established ML data pipelines feeding direct predictive decision support tools."
     },
     {
-      "title": "Next.js Task Manager",
-      "description": "Modern full-stack task management application with a focus on UX and real-time updates.",
+      "title": "Task Management Platform",
+      "problem": "Legacy task management tools suffered from poor state reconciliation and lagging DX (Developer Experience).",
+      "solution": "Created a modern Next.js + TypeScript web application focused on state management architecture and scalable frontend components.",
       "technologies": [
         "Next.js",
         "TypeScript",
-        "Tailwind CSS"
+        "Tailwind CSS",
+        "React State"
       ],
       "githubUrl": "https://github.com/GoBhargavi/task-management-app",
-      "featured": false
+      "impact": "Showcases strong grasp of progressive frontend frameworks and UI state management."
+    },
+    {
+      "title": "Log Insights Platform",
+      "problem": "Debugging production environments requires sifting through hundreds of raw system logs manually.",
+      "solution": "Architected an AI-driven data processing pipeline to synthesize logs into actionable observability analytics.",
+      "technologies": [
+        "Python",
+        "RAG",
+        "FastAPI",
+        "Observability"
+      ],
+      "githubUrl": "https://github.com/GoBhargavi/log-insights-platform",
+      "impact": "Demonstrates backend-heavy system design for automated technical analytics."
     }
-  ],
-  "mentorship": {
-    "title": "Mentorship & Community",
-    "description": "Giving back to the community by guiding aspiring developers and students.",
-    "platform": "Topmate",
-    "profileUrl": "https://topmate.io/",
-    "testimonials": [
-      {
-        "name": "Dev Tyagi",
-        "date": "12th Aug, 2024",
-        "rating": 5,
-        "text": "Bhargavi inspire you to think bigger when it comes to career goals, thank you for encouraging me to aim for more challenging roles."
-      },
-      {
-        "name": "Naveen Badisa",
-        "date": "17th Jul, 2024",
-        "rating": 5,
-        "text": "I'm so grateful for Bhargavi's 1:1 session. She provided a clear and structured plan for interview preparation, making it easy for me to learn. Thanks to her, I now feel more confident. Overall, it was a great session."
-      },
-      {
-        "name": "Subalakshmi Shanthosi",
-        "date": "5th May, 2024",
-        "rating": 5,
-        "text": "I recently had the pleasure of receiving career guidance from Bhargavi, and I must say, it was really very useful and motivating. Her passion for helping others achieve their career aspirations was evident, and her suggestions were tailored to my specific situation and goals."
-      },
-      {
-        "name": "Apoorva Mamindla",
-        "date": "4th May, 2024",
-        "rating": 4,
-        "text": "It was an incredible session overall, got valuable suggestions. The software/career guidance session I attended was really insightful. Bhargavi explained things clearly and knew her stuff well. She made complex topics easy to understand."
-      },
-      {
-        "name": "Yatin Nagpal",
-        "date": "17th Jul, 2024",
-        "rating": 5,
-        "text": "The session was really very helpful. Thank you Bhargavi, your guidance on backend development and career goals would definitely help me uplift myself. You had given good amount of time in understanding my problem and doubts."
-      },
-      {
-        "name": "Ashrita",
-        "date": "22nd Jun, 2024",
-        "rating": 5,
-        "text": "I want to express my heartfelt gratitude to Bhargavi for her invaluable guidance and support. She not only boosted my confidence but also provided clear insights into the specific skillset I should develop, tailored to my abilities."
-      }
-    ]
-  },
-  "languages": [],
-  "interests": [],
-  "softSkills": []
+  ]
 }

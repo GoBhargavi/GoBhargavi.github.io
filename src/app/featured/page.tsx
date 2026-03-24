@@ -3,7 +3,8 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { Newspaper, ExternalLink, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import { ExternalLink, ArrowLeft } from 'lucide-react';
 
 const FeaturedPage = () => {
     // Data can be moved to JSON later
@@ -31,10 +32,10 @@ const FeaturedPage = () => {
             <Navbar />
 
             <section className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
-                <a href="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-neon-cyan mb-8 transition-colors">
+                <Link href="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-neon-cyan mb-8 transition-colors">
                     <ArrowLeft size={16} />
                     Back to Portfolio
-                </a>
+                </Link>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

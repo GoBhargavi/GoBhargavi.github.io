@@ -1,108 +1,118 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import resumeData from '@/data/resumeData.json';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRecruiter } from '@/context/RecruiterContext';
+import { ArrowDownRight } from 'lucide-react';
 
 const Hero = () => {
     const { isRecruiterMode } = useRecruiter();
+    const { scrollYProgress } = useScroll();
+    const yTransform = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
     return (
-        <section id="hero" className="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-obsidian-950 px-6 transition-colors duration-500">
-            {/* Technical Metadata Overlays */}
-            {!isRecruiterMode && (
-                <>
-                    <div className="absolute top-32 left-6 font-mono text-[10px] text-slate-500 hidden md:block uppercase tracking-widest">
-                        <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-signal-orange animate-pulse" />
-                            System Active: Node_Architect_v2.0
+        <section id="hero" className="relative min-h-[100svh] w-full overflow-hidden bg-obsidian-950 flex flex-col justify-end p-6 md:p-12">
+            {/* Background elements - extreme asymmetry */}
+            <motion.div 
+                style={{ y: yTransform }}
+                className="absolute top-0 right-0 w-[120%] h-[120%] opacity-20 pointer-events-none"
+            >
+                <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] border-[1px] border-signal-orange/30 rounded-full blur-[120px]" />
+                <div className="absolute top-[20%] right-[20%] grid grid-cols-12 gap-1 w-full h-full opacity-10">
+                    {Array.from({length: 144}).map((_, i) => (
+                        <div key={i} className="w-1 h-1 bg-white" />
+                    ))}
+                </div>
+            </motion.div>
+
+            {/* Brutalist Top-Left System Metadata */}
+            <div className={`absolute top-12 left-6 md:left-12 flex flex-col gap-1 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] transition-colors ${isRecruiterMode ? 'text-slate-500' : 'text-signal-orange/70'}`}>
+                <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-signal-orange animate-pulse" />
+                    <span>SYS_ONLINE: BHARGAVI_G</span>
+                </div>
+                <span>DOMAIN: AI_ARCHITECTURE</span>
+                <span>STATUS: READY</span>
+            </div>
+
+            {/* Lower Asymmetric Layout (Content jammed bottom left) */}
+            <div className="relative z-10 w-full max-w-7xl flex flex-col md:flex-row justify-between items-end gap-12 mt-32">
+                <div className="flex flex-col gap-6 max-w-4xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                        <h1 className="text-6xl md:text-[7rem] lg:text-[8rem] font-bold tracking-tighter leading-[0.85] text-obsidian-900">
+                            <span className="block hover:text-signal-orange transition-colors duration-300">AI Full Stack</span>
+                            <span className="block hover:text-signal-orange transition-colors duration-300">Architect</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl text-slate-600 mt-6 max-w-3xl leading-relaxed">
+                            Building production-grade LLM and RAG systems with end-to-end frontend, backend, and AI infrastructure for fintech and healthcare enterprises on cloud scale platforms.
+                        </p>
+                        <div className="mt-8 space-y-2">
+                            <div className="flex items-center gap-3 text-sm text-slate-700">
+                                <span className="w-2 h-2 bg-signal-orange rounded-full"></span>
+                                <span>10+ years architecting scalable systems across fintech and healthcare</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-slate-700">
+                                <span className="w-2 h-2 bg-signal-orange rounded-full"></span>
+                                <span>RAG pipelines and agentic workflows with LangChain/LangGraph</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-slate-700">
+                                <span className="w-2 h-2 bg-signal-orange rounded-full"></span>
+                                <span>Enterprise-scale deployments on Azure and AWS</span>
+                            </div>
                         </div>
-                        <div>Location: Dallas, TX // 32.7767° N, 96.7970° W</div>
-                    </div>
+                    </motion.div>
 
-                    <div className="absolute bottom-12 right-6 font-mono text-[10px] text-slate-500 hidden md:block text-right uppercase tracking-widest leading-loose">
-                        <div>AI Architecture / Full Stack Systems</div>
-                        <div>Production Environments Only</div>
-                        <div className="text-signal-orange">Auth: HIPAA_COMPLIANT_READY</div>
-                    </div>
-                </>
-            )}
-
-            {/* Main Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                    className="mb-4"
-                >
-                    <span className="font-mono text-[12px] text-signal-orange uppercase tracking-[0.4em]">
-                        Engineering Intelligence
-                    </span>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative"
-                >
-                    <h1 className="text-6xl md:text-[120px] font-mono font-bold leading-none tracking-tighter text-white uppercase text-center">
-                        <span className={`block transition-all ${!isRecruiterMode ? 'hover:animate-glitch cursor-crosshair' : ''}`}>AI Architect</span>
-                        <span className={`block lg:-mt-6 ${isRecruiterMode ? 'text-slate-900 font-sans' : 'text-slate-800'}`}>Bhargavi G<span className="text-signal-orange">.</span></span>
-                    </h1>
-                </motion.div>
-
-                <div className="mt-12 w-full max-w-2xl">
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className={`text-center leading-relaxed ${isRecruiterMode ? 'font-sans text-lg text-slate-600' : 'font-mono text-sm md:text-base text-slate-400'}`}
+                        transition={{ delay: 0.4, duration: 1 }}
+                        className="flex flex-wrap gap-3 font-mono text-xs md:text-sm tracking-wider uppercase text-slate-400 mt-4"
                     >
-                        {isRecruiterMode ? (
-                            "Senior AI Full-Stack Engineer with 10+ years of experience architecting production AI systems, RAG pipelines, and multi-agent workflows."
-                        ) : (
-                            "[SYSTEM INFO]: 10+ years experience in product delivery. The last 2+ years exclusively architecting production AI systems - RAG pipelines, multi-agent LLM workflows, and agentic systems."
-                        )}
-                    </motion.p>
+                        <span className="border border-white/20 px-3 py-1">Healthcare</span>
+                        <span className="border border-white/20 px-3 py-1">Fintech</span>
+                        <span className="border border-white/20 px-3 py-1">Analytics</span>
+                        <span className="border border-signal-orange/40 text-signal-orange px-3 py-1">RAG Pipelines</span>
+                        <span className="border border-signal-orange/40 text-signal-orange px-3 py-1">Agentic ML</span>
+                    </motion.div>
                 </div>
 
+                {/* Call to action pushed to the bottom right */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1.5, duration: 0.5 }}
-                    className="mt-12"
+                    transition={{ delay: 0.8, duration: 0.5 }}
+                    className="self-start md:self-end mb-4 flex flex-col gap-3"
                 >
                     <a
                         href="#projects"
-                        className="group relative px-12 py-4 bg-transparent border border-white/10 hover:border-signal-orange transition-all duration-300 overflow-hidden"
+                        className="group relative flex items-center justify-between gap-6 px-8 py-6 bg-white hover:bg-signal-orange text-obsidian-950 transition-colors duration-300"
                     >
-                        <span className={`relative z-10 uppercase tracking-[0.3em] transition-colors ${isRecruiterMode ? 'font-sans text-sm font-bold text-signal-orange' : 'font-mono text-[10px] text-white group-hover:text-signal-orange'}`}>
-                            {isRecruiterMode ? 'View Case Studies' : 'Initialize Protocol'}
+                        <span className="font-bold uppercase tracking-widest text-sm">
+                            View Work
                         </span>
-                        <div className="absolute inset-0 bg-signal-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 opacity-5" />
+                        <ArrowDownRight size={24} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
+                    </a>
+                    <a
+                        href="#projects"
+                        className="group relative flex items-center justify-center gap-3 px-6 py-4 border border-white/30 hover:border-signal-orange text-white hover:text-signal-orange transition-colors duration-300"
+                    >
+                        <span className="font-medium uppercase tracking-widest text-sm">
+                            Explore Projects
+                        </span>
                     </a>
                 </motion.div>
             </div>
-
-            {/* Background Texture Overlay */}
-            {!isRecruiterMode && (
-                <div className="absolute inset-0 pointer-events-none opacity-[0.03] animate-pulse-slow">
-                    <div className="absolute inset-0 bg-dot-pattern bg-dot-size" />
-                </div>
-            )}
-
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.5, duration: 1 }}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
-            >
-                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-signal-orange to-transparent" />
-            </motion.div>
+            
+            {/* Hard Line Break for Structural Tension */}
+            <motion.div 
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 1.5, ease: "easeOut" }}
+                className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-signal-orange via-white/20 to-transparent origin-left"
+            />
         </section>
     );
 };

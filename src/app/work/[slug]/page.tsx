@@ -1,12 +1,10 @@
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, ExternalLink, Github, Layers, Zap } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { getCaseStudyData, getCaseStudySlugs } from '@/lib/markdown';
 import ArchitectureDiagram from '@/components/content/ArchitectureDiagram';
 import MetricCard from '@/components/content/MetricCard';
-import CodeBlock from '@/components/content/CodeBlock';
 
 // Helper to render HTML content safely
 function DangerousHtml({ html }: { html: string }) {
@@ -24,13 +22,9 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
     const params = await props.params;
     const postData = await getCaseStudyData(params.slug);
 
-    // Dynamic components map
-    const components = {
-        ArchitectureDiagram: (props: any) => <ArchitectureDiagram {...props} />,
-        MetricCard: (props: any) => <MetricCard {...props} />,
-        CodeBlock: (props: any) => <CodeBlock {...props} />
-        // Add more as needed
-    };
+    // Dynamic component prop types
+    type TrendType = 'up' | 'down';
+
 
     return (
         <main className="bg-obsidian-950 min-h-screen text-slate-300 selection:bg-neon-cyan/20 selection:text-neon-cyan pb-20">
@@ -102,14 +96,14 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
                                     title="Bundle Size"
                                     metric="-40%"
                                     description="Reduction in initial load JavaScript payload"
-                                    trend="up"
+                                    trend={"up" as TrendType}
                                     chartData={[{ name: 'Monolith', value: 5.2 }, { name: 'MFE', value: 3.1 }]}
                                 />
                                 <MetricCard
                                     title="Deployment Freq"
                                     metric="3x"
                                     description="Increase in release velocity per sprint"
-                                    trend="up"
+                                    trend={"up" as TrendType}
                                     chartData={[{ name: 'Before', value: 2 }, { name: 'After', value: 6 }]}
                                 />
                             </div>
@@ -124,7 +118,7 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
                                 title="Support Cost"
                                 metric="-40%"
                                 description="Reduction in Level 1 support tickets"
-                                trend="up"
+                                trend={"up" as TrendType}
                             />
                         </div>
                     )}

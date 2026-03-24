@@ -1,13 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { User, Layers, Code, MessageSquare, FileText, ArrowUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const navItems = [
-    { name: 'Profile', href: '#hero', icon: User },
-    { name: 'Work', href: '#featured-work', icon: Layers },
-    { name: 'Journey', href: '#experience', icon: Code },
-    { name: 'Contact', href: '#footer', icon: MessageSquare },
+    { name: 'Profile', href: '#hero' },
+    { name: 'Work', href: '#featured-work' },
+    { name: 'Journey', href: '#experience' },
+    { name: 'Contact', href: '#footer' },
 ];
 
 const SidebarNav = () => {

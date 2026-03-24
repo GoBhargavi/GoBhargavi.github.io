@@ -6,54 +6,41 @@ import { useRecruiter } from '@/context/RecruiterContext';
 const About = () => {
     const { isRecruiterMode } = useRecruiter();
     return (
-        <section id="about" className={`section-container transition-colors duration-500 ${isRecruiterMode ? 'bg-white' : ''}`}>
-            {!isRecruiterMode && (
-                <div className="vertical-label font-mono text-[10px] text-slate-700 uppercase tracking-[0.5em]">
-                    Identity / Philosophy
+        <section id="about" className={`relative min-h-[60svh] px-6 md:px-12 py-24 border-b border-white/10 ${isRecruiterMode ? 'bg-slate-50 text-slate-900 border-slate-200' : 'bg-obsidian-900 text-slate-300'}`}>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                
+                {/* Asymmetric Structural Labeling */}
+                <div className="md:col-span-3 flex flex-col gap-4 font-mono text-xs uppercase tracking-[0.3em]">
+                    <div className="w-12 h-[1px] bg-signal-orange mb-4" />
+                    <span className={isRecruiterMode ? "text-slate-500" : "text-signal-orange"}>Operating Context</span>
+                    <span className="opacity-50">10+ Years Runtime</span>
                 </div>
-            )}
 
-            <div className="grid md:grid-cols-12 gap-12 items-start">
-                <div className="md:col-span-8">
+                <div className="md:col-span-9">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6 }}
+                        className="space-y-8"
                     >
-                        <h2 className={`text-4xl md:text-6xl mb-8 ${isRecruiterMode ? 'text-slate-900 font-sans font-bold' : ''}`}>
-                            I don't just integrate AI - <span className={`${isRecruiterMode ? 'text-signal-orange' : 'text-signal-orange italic'}`}>I architect it.</span>
+                        <h2 className={`text-3xl md:text-5xl font-bold tracking-tight uppercase leading-snug ${isRecruiterMode ? 'text-slate-900' : 'text-white'}`}>
+                            From UI engineering to <span className="text-signal-orange">autonomous AI systems architecture.</span>
                         </h2>
 
-                        <div className={`space-y-6 text-lg leading-relaxed ${isRecruiterMode ? 'text-slate-600 font-sans' : 'text-slate-400 font-light'}`}>
+                        <div className={`space-y-6 text-base md:text-xl font-light leading-relaxed max-w-4xl ${isRecruiterMode ? 'text-slate-700' : 'text-slate-400'}`}>
                             <p>
-                                Senior AI Full Stack Engineer with 10+ years of cross-functional experience. The last 2+ years have been dedicated exclusively to
-                                architecting production-grade AI systems, including RAG pipelines, multi-agent workflows,
-                                and specialized agentic systems for enterprise-scale healthcare and fintech clients.
+                                With over 10 years of experience delivering production-grade applications, I evolved from engineering high-performance frontend interfaces into architecting the deep intelligence that powers them. 
+                                Through this arc, I&apos;ve maintained one constant: an obsession with performance and engineering quality. Today, I build production-grade agentic systems that don&apos;t just chat-they execute, but reason over it autonomously.
                             </p>
                             <p>
-                                I specialize in bridge the gap between AI research and product delivery. My focus is on
-                                engineering autonomous systems capable of high-precision semantic retrieval and
-                                complex reasoning, ensuring reliability, scalability, and HIPAA compliance in
-                                mission-critical environments.
+                                Today, I specialize in bridging the gap between theoretical ML models and real-world product delivery. I design and implement robust Agentic RAG pipelines, deploying multi-agent workflows using LangChain and LangGraph for complex decision support.
+                            </p>
+                            <p>
+                                I operate with equal depth on both sides of the stack- engineering highly scalable React/FastAPI platforms and architecting the underlying LLM infrastructure that ensures deterministic, high-precision semantic retrieval in mission-critical environments.
                             </p>
                         </div>
                     </motion.div>
-                </div>
-
-                <div className="md:col-span-4 space-y-8">
-                    <div className={isRecruiterMode ? 'p-6 bg-slate-50 border border-slate-200' : 'tech-panel'}>
-                        <div className={`font-bold text-xs mb-2 ${isRecruiterMode ? 'text-slate-500 font-sans' : 'text-signal-orange font-mono text-xs'}`}>LOCATION</div>
-                        <div className={isRecruiterMode ? 'text-slate-900 text-xl font-bold' : 'text-white text-xl'}>Dallas, TX</div>
-                    </div>
-                    <div className={isRecruiterMode ? 'p-6 bg-slate-50 border border-slate-200' : 'tech-panel'}>
-                        <div className={`font-bold text-xs mb-2 ${isRecruiterMode ? 'text-slate-500 font-sans' : 'text-signal-orange font-mono text-xs'}`}>EXPERIENCE</div>
-                        <div className={isRecruiterMode ? 'text-slate-900 text-xl font-bold' : 'text-white text-xl'}>10+ Years Total</div>
-                    </div>
-                    <div className={isRecruiterMode ? 'p-6 bg-slate-50 border border-slate-200' : 'tech-panel'}>
-                        <div className={`font-bold text-xs mb-2 ${isRecruiterMode ? 'text-slate-500 font-sans' : 'text-signal-orange font-mono text-xs'}`}>AI FOCUS</div>
-                        <div className={isRecruiterMode ? 'text-slate-900 text-xl font-bold' : 'text-white text-xl'}>2+ Years Specialist</div>
-                    </div>
                 </div>
             </div>
         </section>

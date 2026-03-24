@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote, ArrowRight, ExternalLink } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import resumeData from '@/data/resumeData.json';
 import { useRecruiter } from '@/context/RecruiterContext';
 
@@ -25,7 +25,7 @@ const Mentorship = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                {resumeData.mentorship.testimonials.map((testimonial, index) => (
+                {((resumeData as unknown) as { mentorship: { testimonials: Array<{ text: string; rating: number; name: string; date: string }> } }).mentorship?.testimonials?.map((testimonial, index: number) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 10 }}
@@ -49,7 +49,7 @@ const Mentorship = () => {
                                 ))}
                             </div>
                             <p className={`text-sm leading-relaxed italic font-light ${isRecruiterMode ? 'text-slate-600 font-sans' : 'text-slate-400'}`}>
-                                "{testimonial.text}"
+                                &quot;{testimonial.text}&quot;
                             </p>
                         </div>
 
@@ -73,7 +73,7 @@ const Mentorship = () => {
                 className="flex justify-center"
             >
                 <a
-                    href={resumeData.mentorship.profileUrl}
+                    href={((resumeData as unknown) as { mentorship: { profileUrl: string } }).mentorship?.profileUrl || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`group relative px-10 py-4 bg-transparent border transition-all duration-300 ${isRecruiterMode

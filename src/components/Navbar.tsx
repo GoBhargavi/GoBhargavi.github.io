@@ -1,9 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, FileText, UserCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 import resumeData from '@/data/resumeData.json';
 import { useRecruiter } from '@/context/RecruiterContext';
 
@@ -21,10 +19,10 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'About', href: '#about' },
-        { name: 'Skills', href: '#skills' },
+        { name: 'Expertise', href: '#expertise' },
         { name: 'Projects', href: '#projects' },
+        { name: 'Enterprise AI', href: '#enterprise-ai' },
         { name: 'Experience', href: '#experience' },
-        { name: 'Contact', href: '#contact' },
     ];
 
     return (

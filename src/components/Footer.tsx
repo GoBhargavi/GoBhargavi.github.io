@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import resumeData from '@/data/resumeData.json';
-import { Github, Linkedin, Mail, ArrowUpRight, Heart } from 'lucide-react';
 import { useRecruiter } from '@/context/RecruiterContext';
 
 const Footer = () => {
@@ -23,7 +22,7 @@ const Footer = () => {
                             rel="noopener noreferrer"
                             className={`text-2xl md:text-4xl transition-colors break-all ${isRecruiterMode ? 'text-slate-600 font-sans font-bold hover:text-signal-orange' : 'text-slate-500 font-mono hover:text-signal-orange'}`}
                         >
-                            LET'S CONNECT ON LINKEDIN
+                            LET&apos;S CONNECT ON LINKEDIN
                         </a>
                     </div>
 
@@ -40,7 +39,7 @@ const Footer = () => {
                 </div>
 
                 <div className={`pt-12 border-t flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.2em] ${isRecruiterMode ? 'border-slate-100 text-slate-400 font-sans font-bold' : 'border-white/5 text-slate-800 font-mono'}`}>
-                    <div>{isRecruiterMode ? 'Bhargavi Govardhanam // Portfolio 2024' : 'Based in Dallas, TX // Remote Capability: 100%'}</div>
+                    <div>{isRecruiterMode ? 'Bhargavi Govardhanam // Portfolio' : 'USA // Remote Capability: 100%'}</div>
                     <div>{isRecruiterMode ? 'Expertise in AI Architecture & Full Stack Systems' : 'Built with Next.js + Tailwind + Engineering Pride'}</div>
                 </div>
             </div>

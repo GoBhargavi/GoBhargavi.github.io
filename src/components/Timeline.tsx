@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Building2, Calendar, MapPin } from 'lucide-react';
 import resumeData from '@/data/resumeData.json';
 import { useRecruiter } from '@/context/RecruiterContext';
 
@@ -52,8 +51,7 @@ const Timeline = () => {
                         </p>
 
                         <div className="flex items-center gap-2 text-[10px] font-mono text-slate-700 uppercase">
-                            <MapPin size={10} />
-                            {job.location}
+                            {/* Location removed from data core */}
                         </div>
                     </motion.div>
                 ))}

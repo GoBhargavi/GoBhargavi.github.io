@@ -1,20 +1,12 @@
 'use client';
-import React, { useState, useCallback } from 'react';
 import ReactFlow, {
     Background,
     Controls,
-    Node,
-    Edge,
     useNodesState,
     useEdgesState,
     ConnectionMode
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { Server, Database, Smartphone, Globe, Cloud, Router } from 'lucide-react';
-
-const nodeTypes = {
-    // Custom nodes can be defined here if needed simpler for now
-};
 
 interface ArchitectureDiagramProps {
     type: 'micro-frontend' | 'rag-chat' | 'diafriend';
@@ -66,8 +58,8 @@ const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type }) => {
     };
 
     const { nodes: initialNodes, edges: initialEdges } = getInitialData();
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    const [nodes, , onNodesChange] = useNodesState(initialNodes);
+    const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
     return (
         <div className="h-[400px] w-full border border-white/10 rounded-xl overflow-hidden bg-obsidian-900/50 backdrop-blur-sm">
