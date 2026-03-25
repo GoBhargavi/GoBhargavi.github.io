@@ -34,7 +34,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <h1 className="text-6xl md:text-[7rem] lg:text-[8rem] font-bold tracking-tighter leading-[0.85] text-obsidian-900">
+                        <h1 className="text-6xl md:text-[7rem] lg:text-[8rem] font-bold tracking-tighter leading-[0.85] text-[#2563EB]">
                             <span className="block hover:text-signal-orange transition-colors duration-300">AI Full Stack</span>
                             <span className="block hover:text-signal-orange transition-colors duration-300">Architect</span>
                         </h1>
