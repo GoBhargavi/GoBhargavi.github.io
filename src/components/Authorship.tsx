@@ -29,7 +29,7 @@ const Authorship = () => {
                 </motion.div>
 
                 <div className="grid gap-6">
-                    {((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications && ((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications.length > 0 ? (
+                    {((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications && (((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications?.length || 0) > 0 ? (
                         ((resumeData as unknown) as { publications?: Array<{ title: string; source: string; date: string; description: string; url: string; tags: string[] }> }).publications?.map((pub, index: number) => (
                             <motion.div
                                 key={index}

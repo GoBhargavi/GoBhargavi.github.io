@@ -25,21 +25,27 @@ const About = () => {
                         className="space-y-8"
                     >
                         <h2 className={`text-3xl md:text-5xl font-bold tracking-tight uppercase leading-snug ${isRecruiterMode ? 'text-slate-900' : 'text-white'}`}>
-                            From UI engineering to <span className="text-signal-orange">autonomous AI systems architecture.</span>
+                            Production <span className="text-signal-orange">Impact</span>
                         </h2>
 
-                        <div className={`space-y-6 text-base md:text-xl font-light leading-relaxed max-w-4xl ${isRecruiterMode ? 'text-slate-700' : 'text-slate-400'}`}>
-                            <p>
-                                With over 10 years of experience delivering production-grade applications, I evolved from engineering high-performance frontend interfaces into architecting the deep intelligence that powers them. 
-                                Through this arc, I&apos;ve maintained one constant: an obsession with performance and engineering quality. Today, I build production-grade agentic systems that don&apos;t just chat-they execute, but reason over it autonomously.
-                            </p>
-                            <p>
-                                Today, I specialize in bridging the gap between theoretical ML models and real-world product delivery. I design and implement robust Agentic RAG pipelines, deploying multi-agent workflows using LangChain and LangGraph for complex decision support.
-                            </p>
-                            <p>
-                                I operate with equal depth on both sides of the stack- engineering highly scalable React/FastAPI platforms and architecting the underlying LLM infrastructure that ensures deterministic, high-precision semantic retrieval in mission-critical environments.
-                            </p>
-                        </div>
+                        <ul className={`space-y-6 text-base md:text-xl font-light leading-relaxed max-w-4xl ${isRecruiterMode ? 'text-slate-700' : 'text-slate-400'}`}>
+                            <li className="flex items-start gap-4">
+                                <div className="mt-2 w-2 h-2 bg-signal-orange shrink-0" />
+                                <span><strong className={isRecruiterMode ? 'text-slate-900' : 'text-white'}>Architected and delivered an end-to-end Agentic RAG platform</strong> for loan origination, driving context-aware decision support across complex financial workflows.</span>
+                            </li>
+                            <li className="flex items-start gap-4">
+                                <div className="mt-2 w-2 h-2 bg-signal-orange shrink-0" />
+                                <span><strong className={isRecruiterMode ? 'text-slate-900' : 'text-white'}>Led the migration of a cross-border escrow platform</strong> to modern frameworks and Go microservices, improving system performance and production stability on Azure Kubernetes Service.</span>
+                            </li>
+                            <li className="flex items-start gap-4">
+                                <div className="mt-2 w-2 h-2 bg-signal-orange shrink-0" />
+                                <span><strong className={isRecruiterMode ? 'text-slate-900' : 'text-white'}>Designed and integrated a GenAI-powered RAG chatbot</strong> for a healthcare platform, enabling robust natural language queries over sensitive resident care plans.</span>
+                            </li>
+                            <li className="flex items-start gap-4">
+                                <div className="mt-2 w-2 h-2 bg-signal-orange shrink-0" />
+                                <span><strong className={isRecruiterMode ? 'text-slate-900' : 'text-white'}>Engineered intelligent predictive systems</strong> utilizing ARIMA and LSTM machine learning pipelines for dynamic visitor traffic forecasting and automated capacity decision support.</span>
+                            </li>
+                        </ul>
                     </motion.div>
                 </div>
             </div>

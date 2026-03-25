@@ -9,18 +9,25 @@ const EnterpriseWork = () => {
     
     const enterpriseProjects = [
         {
-            title: "Agentic RAG Lending Platform",
-            context: "Modernizing loan origination for enterprise lending systems.",
-            architecture: "React 18, Python FastAPI Microservices, Azure Kubernetes Service (AKS)",
-            aiComponents: "Multi-agent orchestration (LangChain / LangGraph), Autonomous document analysis, Financial data extraction.",
-            impact: "Enabled context-aware decision support and automated financial analysis within sensitive production workflows."
+            title: "PVMA (ARIMA, LSTM)",
+            context: "Automated forecasting pipelines leveraging deep learning and statistical models to predict facility traffic and prevent operational bottlenecks in real-time.",
+            architecture: "Python, TensorFlow, scikit-learn",
+            aiComponents: "ARIMA for baseline trends, LSTM for complex pattern recognition.",
+            impact: "Optimized facility staffing and large-scale operations through predictive decision support."
         },
         {
-            title: "Healthcare GenAI Discovery Engine",
-            context: "Natural language insight layer for healthcare and senior living platforms.",
-            architecture: "React 18, Node.js, HIPAA-Compliant Data Pipelines",
-            aiComponents: "RAG pipeline for health record synthesis, Natural language queries over resident care plans.",
-            impact: "Reduced clinician search time while maintaining strict compliance and data security boundaries."
+            title: "Agentic RAG Lending Platform",
+            context: "Driving autonomous financial document analysis and data structuring within distributed microservice architectures.",
+            architecture: "React 18, Python FastAPI Microservices, Azure Kubernetes Service (AKS)",
+            aiComponents: "Multi-agent orchestration (LangChain / LangGraph), Vector Search.",
+            impact: "Enabled autonomous end-to-end financial data extraction and deterministic decision support."
+        },
+        {
+            title: "Healthcare GenAI Chatbot",
+            context: "Deterministic RAG pipeline enabling natural language discovery over sensitive resident care plans.",
+            architecture: "React 18, HIPAA-compliant boundaries, Strict Guardrails",
+            aiComponents: "Semantic search, LLM-based narrative generation, Medical entity extraction.",
+            impact: "Demonstrates a core foundation in ML systems scaled into LLM-based architectures."
         }
     ];
 
@@ -28,9 +35,9 @@ const EnterpriseWork = () => {
         <section id="enterprise-ai" className={`relative px-6 md:px-12 py-24 border-b border-white/10 ${isRecruiterMode ? 'bg-slate-50 text-slate-900 border-slate-200' : 'bg-obsidian-950 text-slate-300'}`}>
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20">
-                    <div className="font-mono text-xs text-signal-orange uppercase tracking-[0.4em] mb-4">Industrial Grade</div>
+                    <div className="font-mono text-xs text-signal-orange uppercase tracking-[0.4em] mb-4">Intelligent Architectures</div>
                     <h2 className={`text-4xl md:text-6xl font-bold uppercase tracking-tight ${isRecruiterMode ? 'text-slate-900' : 'text-white'}`}>
-                        Enterprise <span className="text-signal-orange">AI Work</span>
+                        AI <span className="text-signal-orange">Systems</span>
                     </h2>
                 </div>
 

@@ -5,8 +5,8 @@
     "github": "https://github.com/GoBhargavi",
     "linkedin": "https://www.linkedin.com/in/gobhargavi",
     "website": "",
-    "summary": "AI Architect and Full Stack Engineer with 11 years of experience delivering production-grade intelligent systems across healthcare, fintech, and enterprise domains. Equal depth on both sides: architecting LLM pipelines, RAG systems, and multi-agent agentic workflows with LangChain and LangGraph, and engineering high-performance React and FastAPI full stack applications deployed on Azure and AWS. Track record includes ML prototypes for fraud detection, credit risk, and predictive analytics.",
-    "role": "AI Architect and Full Stack Engineer"
+    "summary": "Building production-grade LLM and RAG systems with end-to-end frontend, backend, and AI infrastructure for fintech and healthcare enterprises on cloud-scale platforms.",
+    "role": "AI Full Stack Architect"
   },
   "experience": [
     {
@@ -14,7 +14,7 @@
       "position": "AI Full Stack Engineer",
       "startDate": "Jan 2026",
       "endDate": "Present",
-      "description": "Architected and delivered an end-to-end Agentic RAG platform for a lending management modernization initiative, spanning a React 18 frontend and a Python FastAPI microservices backend deployed on Azure Kubernetes Service (AKS). Designed a multi-agent orchestration layer using LangChain and LangGraph, enabling autonomous document analysis, financial data extraction, and context-aware decision support across loan origination workflows.",
+      "description": "Architected and delivered an end-to-end Agentic RAG platform for loan management modernization spanning frontend interfaces and AI infrastructure. Designed a multi-agent orchestration layer using LangChain and LangGraph, enabling autonomous document analysis and deterministic financial data extraction. Engineered a highly scalable system architecture utilizing a React 18 frontend and Python FastAPI microservices backend deployed on Azure Kubernetes Service (AKS).",
       "companyUrl": ""
     },
     {
@@ -22,7 +22,7 @@
       "position": "Full Stack Engineer",
       "startDate": "Nov 2023",
       "endDate": "Dec 2025",
-      "description": "Designed and integrated a GenAI-powered RAG chatbot for a healthcare and senior living platform, enabling natural language queries over resident care plans and health records. Built core application architecture using React 18 with functional components, Hooks, and Context API. Implemented complex multi-step forms reducing onboarding time by 40% and improving accuracy.",
+      "description": "Designed and integrated a GenAI-powered RAG chatbot for a healthcare platform, enabling strict natural language queries over resident medical records. Built the core application architecture using React 18 with modern functional components, Hooks, and complex Context API state flows. Implemented intricate multi-step state management systems, tangibly reducing corporate onboarding time by 40% while improving data accuracy.",
       "companyUrl": ""
     },
     {
@@ -30,7 +30,7 @@
       "position": "Lead Engineer",
       "startDate": "Nov 2021",
       "endDate": "Oct 2023",
-      "description": "Led the architecture and development of a cross-border escrow platform's Vue.js frontend, implementing robust KYC workflows and seamless API integration with Go-based backend services. Spearheaded the migration from Vue 2 to Vue 3, improving system performance and maintainability while ensuring production stability on Azure Kubernetes Service.",
+      "description": "Led the architecture and development of a high-volume cross-border escrow platform's frontend, executing rigorous KYC security workflows. Spearheaded the foundational migration from Vue 2 to Vue 3, drastically improving rendering performance, system maintainability, and baseline DX. Engineered secure, resilient API integrations bridging the client with Go-based backend services to guarantee production stability on Azure Kubernetes Service.",
       "companyUrl": ""
     },
     {
@@ -38,7 +38,7 @@
       "position": "Staff Lead Developer",
       "startDate": "Apr 2019",
       "endDate": "Oct 2021",
-      "description": "Architected and led development of banking and loan origination UI systems using React and Vue, implementing role-based access controls and multi-step workflow systems. Built comprehensive file upload and validation platforms, optimized performance through lazy loading and code splitting, and led a team of 6 engineers while training 10+ new hires on Azure deployment best practices.",
+      "description": "Architected banking and loan origination UI systems handling sensitive data, implementing strict role-based access controls and resilient multi-step workflows. Built comprehensive secure file upload and validation platforms, optimizing core web vitals through targeted lazy loading and dynamic code splitting. Led a cross-functional team of 6 engineers and successfully established comprehensive Azure deployment best practices for the wider organization.",
       "companyUrl": ""
     },
     {
@@ -46,7 +46,7 @@
       "position": "Programmer Analyst",
       "startDate": "Nov 2015",
       "endDate": "Apr 2019",
-      "description": "Developed enterprise web applications using React and AngularJS for Fortune 500 clients (Walmart, JB Hunt, AstraZeneca). Built HIPAA-compliant healthcare portals and high-performance logistics dashboards.",
+      "description": "Engineered high-availability enterprise web applications for Fortune 500 clients (Walmart, JB Hunt, AstraZeneca) capable of handling massive operational scale. Architected HIPAA-compliant healthcare portals and high-performance logistics dashboards using strongly typed state management patterns.",
       "companyUrl": ""
     }
   ],
@@ -116,67 +116,42 @@
   ],
   "projects": [
     {
-      "title": "DiaFriend-1.0",
-      "problem": "Diabetes management required disconnected, manual data entry leading to high cognitive load during sensitive healthcare periods.",
-      "solution": "Architected a mobile-first Flutter application streamlining structured data workflows for blood glucose tracking and medication adherence.",
-      "technologies": [
-        "Flutter",
-        "Dart",
-        "Firebase",
-        "Mobile-first Architecture"
-      ],
-      "githubUrl": "https://github.com/GoBhargavi/DiaFriend-1.0",
-      "impact": "Production-ready healthcare UX handling complex structured data workflows."
-    },
-    {
-      "title": "ReLeafApp",
-      "problem": "Substance abuse disorder patients required a reliable, non-judgmental tracking and behavioral mapping application.",
-      "solution": "Built a reliable, sensitive domain UX using Flutter and Firebase prioritizing behavioral health workflows and user safety.",
-      "technologies": [
-        "Flutter",
-        "Firebase",
-        "Behavioral Flow"
-      ],
-      "githubUrl": "https://github.com/GoBhargavi/ReLeafApp",
-      "impact": "Delivered high-reliability UX mapping specifically to sensitive healthcare domain workflows."
-    },
-    {
       "title": "PVMA (Predictive Visitor Management)",
-      "problem": "Facilities needed dynamic forecasting of visitor traffic to prevent bottlenecks and under-staffing.",
-      "solution": "Engineered a predictive system utilizing ARIMA and LSTM machine learning pipelines for automated decision support.",
+      "problem": "Facilities needed dynamic forecasting of visitor traffic to prevent operational bottlenecks and persistent under-staffing.",
+      "solution": "Engineered a precise predictive system utilizing ARIMA and LSTM machine learning pipelines to drive automated decision support. Telemetry data ingestion pipelines feeding into specialized ML models, exposed to clients via low-latency decision support APIs.",
       "technologies": [
         "Python",
         "TensorFlow",
         "scikit-learn"
       ],
       "githubUrl": "https://github.com/GoBhargavi/PVMA",
-      "impact": "Established ML data pipelines feeding direct predictive decision support tools."
+      "impact": "Established robust ML data pipelines feeding direct predictive decision support tools, quantitatively optimizing facility staffing and large-scale operations."
     },
     {
-      "title": "Task Management Platform",
-      "problem": "Legacy task management tools suffered from poor state reconciliation and lagging DX (Developer Experience).",
-      "solution": "Created a modern Next.js + TypeScript web application focused on state management architecture and scalable frontend components.",
+      "title": "Agentic RAG Lending Platform",
+      "problem": "Complex loan origination workflows required heavy manual document analysis and error-prone financial data extraction across thousands of disparate source files.",
+      "solution": "Designed a robust multi-agent orchestration layer using LangChain and LangGraph to enable autonomous, reliable document analysis and context-aware decision support.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "React State"
+        "LangChain",
+        "React 18",
+        "FastAPI",
+        "AKS"
       ],
-      "githubUrl": "https://github.com/GoBhargavi/task-management-app",
-      "impact": "Showcases strong grasp of progressive frontend frameworks and UI state management."
+      "githubUrl": "https://github.com/GoBhargavi",
+      "impact": "Enabled autonomous end-to-end financial data extraction and deterministic decision support across the entire lending lifecycle."
     },
     {
       "title": "Log Insights Platform",
-      "problem": "Debugging production environments requires sifting through hundreds of raw system logs manually.",
-      "solution": "Architected an AI-driven data processing pipeline to synthesize logs into actionable observability analytics.",
+      "problem": "Debugging distributed production environments required engineering teams to sift through hundreds of raw system logs manually, severely impacting MTTR.",
+      "solution": "Architected an AI-driven data processing pipeline using RAG techniques to synthesize localized logs into actionable observability analytics.",
       "technologies": [
         "Python",
         "RAG",
         "FastAPI",
-        "Observability"
+        "LLMs"
       ],
       "githubUrl": "https://github.com/GoBhargavi/log-insights-platform",
-      "impact": "Demonstrates backend-heavy system design for automated technical analytics."
+      "impact": "Automated technical analytics and deep system tracing, drastically reducing mean time to resolution (MTTR) for complex production incidents."
     }
   ]
 }

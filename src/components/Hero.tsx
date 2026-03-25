@@ -24,15 +24,7 @@ const Hero = () => {
                 </div>
             </motion.div>
 
-            {/* Brutalist Top-Left System Metadata */}
-            <div className={`absolute top-12 left-6 md:left-12 flex flex-col gap-1 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] transition-colors ${isRecruiterMode ? 'text-slate-500' : 'text-signal-orange/70'}`}>
-                <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-signal-orange animate-pulse" />
-                    <span>SYS_ONLINE: BHARGAVI_G</span>
-                </div>
-                <span>DOMAIN: AI_ARCHITECTURE</span>
-                <span>STATUS: READY</span>
-            </div>
+
 
             {/* Lower Asymmetric Layout (Content jammed bottom left) */}
             <div className="relative z-10 w-full max-w-7xl flex flex-col md:flex-row justify-between items-end gap-12 mt-32">

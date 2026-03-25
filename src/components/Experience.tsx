@@ -43,9 +43,14 @@ const Experience = () => {
                                         {exp.company}
                                     </div>
                                 </div>
-                                <p className={`text-base md:text-lg font-light leading-relaxed max-w-3xl ${isRecruiterMode ? 'text-slate-700' : 'text-slate-400'}`}>
-                                    {exp.description}
-                                </p>
+                                <ul className={`space-y-4 text-base md:text-lg font-light leading-relaxed max-w-3xl ${isRecruiterMode ? 'text-slate-700' : 'text-slate-400'}`}>
+                                    {exp.description.split('. ').filter(Boolean).map((bullet, i) => (
+                                        <li key={i} className="flex items-start gap-4">
+                                            <div className="mt-2.5 w-1.5 h-1.5 bg-signal-orange shrink-0 rounded-full" />
+                                            <span>{bullet}{!bullet.endsWith('.') && '.'}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </motion.div>
                     ))}
