@@ -23,13 +23,13 @@ const MetricCard: React.FC<MetricCardProps> = ({ title, metric, description, cha
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-6 rounded-2xl bg-obsidian-900 border border-white/5 relative overflow-hidden group"
+            className="p-6 rounded-none bg-obsidian-900 border border-white/5 relative overflow-hidden group"
         >
             <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                     <h4 className="text-slate-400 text-sm font-medium mb-2 uppercase tracking-wider">{title}</h4>
                     <div className="flex items-baseline gap-2 mb-2">
-                        <span className={`text-4xl font-bold font-outfit ${trend === 'up' ? 'text-green-400' : trend === 'down' ? 'text-red-400' : 'text-neon-cyan'}`}>
+                        <span className={`text-4xl font-bold font-mono ${trend === 'up' ? 'text-green-400' : trend === 'down' ? 'text-red-400' : 'text-signal-orange'}`}>
                             {metric}
                         </span>
                     </div>
@@ -56,7 +56,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ title, metric, description, cha
             </div>
 
             {/* Background Glow */}
-            <div className={`absolute top-0 right-0 w-32 h-32 bg-neon-cyan/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-neon-cyan/10 transition-colors duration-500`} />
+            <div className={`absolute top-0 right-0 w-32 h-32 bg-signal-orange/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-signal-orange/10 transition-colors duration-500`} />
         </motion.div>
     );
 };

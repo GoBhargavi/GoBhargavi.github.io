@@ -53,11 +53,11 @@ export default function OpenSourcePage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center mb-16"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-signal-orange/10 border border-signal-orange/20 mb-6">
                             <Code className="text-teal-400" size={16} />
                             <span className="text-xs font-semibold uppercase tracking-widest text-teal-400">Open Source</span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-black font-outfit mb-6 tracking-tight text-white">
+                        <h1 className="text-4xl md:text-6xl font-black font-mono mb-6 tracking-tight text-white">
                             Public Projects
                         </h1>
                         <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
@@ -73,22 +73,22 @@ export default function OpenSourcePage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/30 transition-all duration-300 flex flex-col"
+                                className="group p-8 rounded-none bg-white/[0.02] border border-white/5 hover:border-signal-orange/30 transition-all duration-300 flex flex-col"
                             >
                                 {/* Header */}
                                 <div className="flex items-start justify-between mb-4">
-                                    <div className="p-3 rounded-xl bg-white/5">
+                                    <div className="p-3 rounded-none bg-white/5">
                                         <Folder className="text-teal-400" size={20} />
                                     </div>
                                     {project.isLive && (
-                                        <span className="px-3 py-1 bg-teal-500/20 border border-teal-500/30 text-teal-400 text-xs font-semibold rounded-full">
+                                        <span className="px-3 py-1 bg-signal-orange/20 border border-signal-orange/30 text-signal-orange flex-none text-[10px] uppercase tracking-widest font-mono font-semibold rounded-none">
                                             Live
                                         </span>
                                     )}
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-xl font-bold text-white mb-3 font-outfit group-hover:text-teal-400 transition-colors">
+                                <h3 className="text-xl font-bold text-white mb-3 font-mono group-hover:text-signal-orange transition-colors">
                                     {project.title}
                                 </h3>
 
@@ -102,7 +102,7 @@ export default function OpenSourcePage() {
                                     {project.tags.map(tag => (
                                         <span
                                             key={tag}
-                                            className="px-2 py-1 bg-white/5 text-slate-400 rounded-md text-xs border border-white/5"
+                                            className="px-2 py-1 bg-white/5 text-slate-400 rounded-none text-xs border border-white/5"
                                         >
                                             {tag}
                                         </span>
@@ -114,7 +114,7 @@ export default function OpenSourcePage() {
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-medium hover:bg-white/10 transition-all w-fit cursor-pointer"
+                                    className="inline-flex items-center gap-2 px-5 py-3 bg-white/5 border border-white/10 text-white rounded-none font-medium hover:bg-white/10 transition-all w-fit cursor-pointer uppercase tracking-widest text-xs"
                                 >
                                     {project.isLive ? (
                                         <>
@@ -143,7 +143,7 @@ export default function OpenSourcePage() {
                             href="https://github.com/GoBhargavi"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 px-8 py-4 bg-teal-500 text-obsidian-950 font-semibold rounded-xl hover:bg-teal-400 transition-all cursor-pointer"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-signal-orange/10 border border-signal-orange/30 text-signal-orange font-mono uppercase tracking-[0.2em] font-semibold rounded-none hover:bg-signal-orange hover:text-obsidian-950 transition-all cursor-pointer"
                         >
                             <Github size={20} />
                             View All on GitHub

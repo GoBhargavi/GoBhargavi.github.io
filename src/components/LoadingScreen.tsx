@@ -41,7 +41,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
                 opacity: 0,
                 transition: { duration: 0.6, ease: "easeInOut" }
             }}
-            className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center overflow-hidden font-inter"
+            className="fixed inset-0 z-[100] bg-obsidian-950 flex flex-col items-center justify-center overflow-hidden"
         >
             <div className="relative z-10 flex flex-col items-center max-w-sm w-full px-6">
                 {/* Brand / Name */}
@@ -51,10 +51,10 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
                     transition={{ duration: 0.8 }}
                     className="mb-8 text-center"
                 >
-                    <h1 className="text-2xl font-bold text-slate-900 tracking-tight mb-2">
+                    <h1 className="text-2xl font-bold text-white tracking-tight mb-2 font-mono">
                         Bhargavi Govardhanam
                     </h1>
-                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-[0.3em]">
+                    <p className="text-[10px] text-slate-500 font-mono uppercase tracking-[0.3em]">
                         Senior AI Full-Stack Engineer
                     </p>
                 </motion.div>
@@ -73,13 +73,13 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
                                 {statuses[statusIndex]}
                             </motion.span>
                         </AnimatePresence>
-                        <span className="text-[10px] text-slate-900 font-mono font-bold">
+                        <span className="text-[10px] text-white font-mono font-bold">
                             {Math.min(progress, 100)}%
                         </span>
                     </div>
 
                     {/* The Rail */}
-                    <div className="h-[2px] w-full bg-slate-100 relative overflow-hidden">
+                    <div className="h-[2px] w-full bg-white/10 relative overflow-hidden">
                         <motion.div
                             className="absolute inset-y-0 left-0 bg-signal-orange"
                             initial={{ width: 0 }}
@@ -104,4 +104,3 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
 };
 
 export default LoadingScreen;
-

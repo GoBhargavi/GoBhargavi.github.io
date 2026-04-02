@@ -4,6 +4,7 @@
     "title": "AI Architect and Full Stack Engineer",
     "github": "https://github.com/GoBhargavi",
     "linkedin": "https://www.linkedin.com/in/gobhargavi",
+    "email": "contact@gobhargavi.com",
     "website": "",
     "summary": "Building production-grade LLM and RAG systems with end-to-end frontend, backend, and AI infrastructure for fintech and healthcare enterprises on cloud-scale platforms.",
     "role": "AI Full Stack Architect"
@@ -82,13 +83,13 @@
   "certifications": [
     {
       "name": "Generative AI Leader",
-      "date": "Google Cloud",
-      "description": "Leadership in GenAI implementation and strategy"
+      "date": "2025",
+      "description": "Google Cloud — Leadership in GenAI implementation and strategy"
     },
     {
       "name": "Ultimate AWS Certified Solutions Architect Associate",
       "date": "2026",
-      "description": ""
+      "description": "Amazon Web Services"
     }
   ],
   "honorsAwards": [],

@@ -11,7 +11,7 @@ interface CodeBlockProps {
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ language, code, filename }) => {
     return (
-        <div className="my-8 rounded-xl overflow-hidden border border-white/10 bg-[#1e1e1e] shadow-2xl">
+        <div className="my-8 rounded-none overflow-hidden border border-white/10 bg-[#1e1e1e] shadow-2xl">
             {filename && (
                 <div className="flex items-center gap-2 px-4 py-2 bg-[#252526] border-b border-white/5">
                     <div className="flex gap-1.5">

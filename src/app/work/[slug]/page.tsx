@@ -27,7 +27,7 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
 
 
     return (
-        <main className="bg-obsidian-950 min-h-screen text-slate-300 selection:bg-neon-cyan/20 selection:text-neon-cyan pb-20">
+        <main className="bg-obsidian-950 min-h-screen text-slate-300 selection:bg-signal-orange/20 selection:text-signal-orange pb-20">
             {/* Navigation */}
             <nav className="fixed top-0 w-full z-50 bg-obsidian-900/80 backdrop-blur-md border-b border-white/5">
                 <div className="container mx-auto px-6 h-16 flex items-center justify-between">
@@ -43,13 +43,13 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
                 <div className="max-w-4xl mx-auto">
                     <div className="flex flex-wrap gap-4 mb-6">
                         {postData.technologies.map((tech: string) => (
-                            <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-neon-cyan/80">
+                            <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-none text-xs font-mono text-signal-orange/80 uppercase tracking-widest">
                                 {tech}
                             </span>
                         ))}
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-outfit text-white mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-mono text-white mb-6 leading-tight">
                         {postData.title}
                     </h1>
 
@@ -64,7 +64,7 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
                         </div>
                         <div>
                             <span className="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Impact</span>
-                            <span className="text-neon-cyan font-medium">{postData.impact}</span>
+                            <span className="text-signal-orange font-medium">{postData.impact}</span>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ export default async function CaseStudyPage(props: { params: Promise<{ slug: str
 
             {/* Content */}
             <section className="container mx-auto px-6">
-                <article className="max-w-3xl mx-auto prose prose-invert prose-lg prose-headings:font-outfit prose-headings:text-white prose-a:text-neon-cyan prose-img:rounded-xl">
+                <article className="max-w-3xl mx-auto prose prose-invert prose-lg prose-headings:font-mono prose-headings:uppercase prose-headings:text-white prose-a:text-signal-orange prose-img:rounded-none">
                     <DangerousHtml html={postData.contentHtml} />
                 </article>
             </section>

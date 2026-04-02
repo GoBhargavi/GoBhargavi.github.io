@@ -33,7 +33,7 @@ const FeaturedCaseStudy = () => {
         <section id="featured-work" className="py-24 bg-obsidian-950">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold font-outfit text-white mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold font-mono text-white mb-6">
                         Engineered for <span className="text-gradient">Impact</span>
                     </h2>
                     <p className="text-slate-400 max-w-2xl text-lg font-light leading-relaxed">
@@ -56,19 +56,19 @@ const FeaturedCaseStudy = () => {
                                 className="group h-full"
                             >
                                 <Link href={`/work/${project.slug}`} className="block h-full">
-                                    <div className="h-full p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-gold/50 transition-all duration-300 relative overflow-hidden flex flex-col group-hover:shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+                                    <div className="h-full p-8 rounded-none bg-obsidian-900 border border-white/5 hover:border-signal-orange/50 transition-all duration-300 relative overflow-hidden flex flex-col group-hover:shadow-[0_0_30px_rgba(0,240,255,0.1)]">
 
                                         {/* Icon & Badge */}
                                         <div className="flex justify-between items-start mb-6">
-                                            <div className="p-3 rounded-xl bg-gold/10 group-hover:bg-gold/20 transition-colors">
+                                            <div className="p-3 rounded-none bg-white/5 group-hover:bg-signal-orange/20 transition-colors">
                                                 <Icon size={24} className="text-gold" />
                                             </div>
-                                            <span className="text-xs font-mono px-3 py-1 rounded-full border border-white/5 text-slate-400 bg-white/5 group-hover:text-gold group-hover:border-gold/20 transition-colors">
+                                            <span className="text-xs font-mono px-3 py-1 rounded-none border border-white/5 text-slate-400 bg-white/5 group-hover:text-signal-orange group-hover:border-signal-orange/20 transition-colors">
                                                 {project.stats}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors font-outfit">
+                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-signal-orange transition-colors font-mono">
                                             {project.title}
                                         </h3>
 

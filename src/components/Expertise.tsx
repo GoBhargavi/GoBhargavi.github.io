@@ -1,11 +1,10 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useRecruiter } from '@/context/RecruiterContext';
 import { Cpu, Database, Layout, Cloud, Layers } from 'lucide-react'; 
+import SectionHeader from '@/components/SectionHeader';
 
 const Expertise = () => {
-    const { isRecruiterMode } = useRecruiter();
     
     const expertiseGroups = [
         {
@@ -36,18 +35,15 @@ const Expertise = () => {
     ];
 
     return (
-        <section id="expertise" className={`relative px-6 md:px-12 py-24 border-b border-white/10 ${isRecruiterMode ? 'bg-white border-slate-200' : 'bg-obsidian-950'}`}>
+        <section id="expertise" className="relative px-6 md:px-12 py-24 border-b border-white/10 bg-obsidian-950">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-                    <div className="max-w-2xl">
-                        <div className="font-mono text-xs text-signal-orange uppercase tracking-[0.4em] mb-4">Core Capabilities</div>
-                        <h2 className={`text-4xl md:text-6xl font-bold uppercase tracking-tight ${isRecruiterMode ? 'text-slate-900' : 'text-white'}`}>
-                            Technical <span className="text-signal-orange">Depth</span>
-                        </h2>
-                    </div>
-                    <p className={`max-w-sm font-mono text-[10px] md:text-xs uppercase tracking-widest text-slate-500 leading-relaxed`}>
-                        Operating at the intersection of production engineering and generative intelligence.
-                    </p>
+                    <SectionHeader
+                        label="Core Capabilities"
+                        title="Technical"
+                        accent="Depth"
+                        subtitle="Operating at the intersection of production engineering and generative intelligence."
+                    />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 overflow-hidden">
@@ -58,11 +54,11 @@ const Expertise = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className={`p-10 ${isRecruiterMode ? 'bg-slate-50 border border-slate-100' : 'bg-obsidian-900'} flex flex-col h-full`}
+                            className="p-10 bg-obsidian-900 flex flex-col h-full"
                         >
                             <div className="flex items-center gap-4 mb-8">
                                 {group.icon}
-                                <h3 className={`font-mono text-xs font-bold uppercase tracking-[0.3em] ${isRecruiterMode ? 'text-slate-900' : 'text-slate-500'}`}>
+                                <h3 className="font-mono text-xs font-bold uppercase tracking-[0.3em] text-slate-500">
                                     {group.title}
                                 </h3>
                             </div>
@@ -70,7 +66,7 @@ const Expertise = () => {
                                 {group.items.map((item, iIdx) => (
                                     <li key={iIdx} className="flex items-start gap-3">
                                         <div className="mt-1.5 w-1 h-1 bg-signal-orange" />
-                                        <span className={`text-base font-light ${isRecruiterMode ? 'text-slate-700' : 'text-slate-400'}`}>
+                                        <span className="text-base font-light text-slate-400">
                                             {item}
                                         </span>
                                     </li>

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Timeline from '@/components/Timeline';
+import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -16,10 +16,10 @@ export default function JourneyPage() {
             <div className="pt-20 flex-grow">
                 <Suspense fallback={
                     <div className="flex justify-center items-center h-64">
-                        <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
+                        <div className="w-8 h-8 border-2 border-signal-orange border-t-transparent rounded-full animate-spin" />
                     </div>
                 }>
-                    <Timeline />
+                    <Experience />
                     <Education />
                 </Suspense>
             </div>

@@ -62,7 +62,7 @@ const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ type }) => {
     const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
     return (
-        <div className="h-[400px] w-full border border-white/10 rounded-xl overflow-hidden bg-obsidian-900/50 backdrop-blur-sm">
+        <div className="h-[400px] w-full border border-white/10 rounded-none overflow-hidden bg-obsidian-900/50 backdrop-blur-sm">
             <ReactFlow
                 nodes={nodes}
                 edges={edges}

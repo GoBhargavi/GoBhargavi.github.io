@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         obsidian: {
-          900: 'var(--obsidian-900)',
-          950: 'var(--obsidian-950)',
+          900: '#05050A',
+          950: '#020205',
         },
-        'signal-orange': 'var(--signal-orange)',
-        'slate-deep': 'var(--slate-deep)',
+        'signal-orange': '#00F0FF',
+        'slate-deep': 'rgba(15, 23, 42, 0.6)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -22,7 +22,8 @@ const config: Config = {
         technical: ['IBM Plex Mono', 'monospace'],
       },
       backgroundImage: {
-        'dot-pattern': 'radial-gradient(circle, #333 1px, transparent 1px)',
+        'dot-pattern': 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)',
+        'glass-gradient': 'linear-gradient(to bottom right, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
       },
       backgroundSize: {
         'dot-size': '24px 24px',
@@ -31,6 +32,8 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'fade-in-staggered': 'fadeIn 0.5s ease-out forwards',
         'glitch': 'glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite',
+        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -45,6 +48,14 @@ const config: Config = {
           '80%': { transform: 'translate(2px, -2px)' },
           '100%': { transform: 'translate(0)' },
         },
+        pulseGlow: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '.5', transform: 'scale(1.05)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        }
       },
     },
   },

@@ -28,11 +28,11 @@ const FeaturedPage = () => {
     ];
 
     return (
-        <main className="min-h-screen bg-obsidian-950 text-slate-300 selection:bg-neon-cyan/20 selection:text-neon-cyan">
+        <main className="min-h-screen bg-obsidian-950 text-slate-300 selection:bg-signal-orange/20 selection:text-signal-orange">
             <Navbar />
 
             <section className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
-                <Link href="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-neon-cyan mb-8 transition-colors">
+                <Link href="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-signal-orange mb-8 transition-colors">
                     <ArrowLeft size={16} />
                     Back to Portfolio
                 </Link>
@@ -42,8 +42,8 @@ const FeaturedPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-12"
                 >
-                    <h1 className="text-4xl md:text-6xl font-black font-outfit text-white mb-6">
-                        Press & <span className="text-neon-cyan">Mentions</span>
+                    <h1 className="text-4xl md:text-6xl font-black font-mono text-white mb-6">
+                        Press & <span className="text-signal-orange">Mentions</span>
                     </h1>
                     <p className="text-xl text-slate-400 leading-relaxed">
                         Features, interviews, and recognition from across the tech community.
@@ -57,21 +57,21 @@ const FeaturedPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
-                            className="group relative p-8 rounded-2xl bg-obsidian-900 border border-white/5 hover:border-neon-cyan/30 transition-all duration-300"
+                            className="group relative p-8 rounded-none bg-obsidian-900 border border-white/5 hover:border-signal-orange/30 shadow-[4px_4px_0_rgba(255,255,255,0.05)] hover:shadow-[4px_4px_0_rgba(0,240,255,0.5)] transition-all duration-300"
                         >
-                            <div className="absolute inset-0 bg-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+                            <div className="absolute inset-0 bg-signal-orange/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-none" />
 
                             <div className="relative z-10 flex flex-col md:flex-row gap-6 md:items-start justify-between">
                                 <div>
                                     <div className="flex items-center gap-3 mb-3 text-sm">
-                                        <span className="font-mono text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded">
+                                        <span className="font-mono text-signal-orange bg-signal-orange/10 px-2 py-0.5 rounded">
                                             {item.source}
                                         </span>
                                         <span className="text-slate-500">•</span>
                                         <span className="text-slate-500">{item.date}</span>
                                     </div>
 
-                                    <h2 className="text-2xl font-bold text-white group-hover:text-neon-cyan transition-colors mb-3">
+                                    <h2 className="text-2xl font-bold text-white group-hover:text-signal-orange transition-colors mb-3">
                                         {item.title}
                                     </h2>
 
@@ -81,7 +81,7 @@ const FeaturedPage = () => {
 
                                     <div className="flex gap-2">
                                         {item.tags.map(tag => (
-                                            <span key={tag} className="text-xs text-slate-500 border border-white/5 px-2 py-1 rounded-full">
+                                            <span key={tag} className="text-[10px] uppercase font-mono tracking-widest text-slate-500 border border-white/10 px-3 py-1 rounded-none">
                                                 #{tag}
                                             </span>
                                         ))}
@@ -93,7 +93,7 @@ const FeaturedPage = () => {
                                         href={item.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="self-start md:self-center p-3 rounded-full bg-white/5 hover:bg-neon-cyan hover:text-obsidian-950 transition-all"
+                                        className="self-start md:self-center p-3 rounded-none bg-white/5 hover:bg-signal-orange hover:text-obsidian-950 transition-all"
                                     >
                                         <ExternalLink size={20} />
                                     </a>

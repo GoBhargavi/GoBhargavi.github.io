@@ -3,32 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --obsidian-900: #0f0f14;
-  --obsidian-950: #0a0a0f;
-  --signal-orange: #FF4D00;
-  --slate-deep: #1a1a1f;
+  --obsidian-900: #05050A;
+  --obsidian-950: #020205;
+  --signal-orange: #00F0FF;
+  --slate-deep: rgba(15, 23, 42, 0.6);
 
   --font-mono: 'IBM Plex Mono', monospace;
   --font-sans: 'Inter', sans-serif;
   --transition-speed: 0.5s;
 }
 
-.recruiter-mode {
-  --obsidian-900: #0f172a;
-  /* Darker Slate for text */
-  --obsidian-950: #FAFAFA;
-  --signal-orange: #2563EB;
-  --slate-deep: #F1F5F9;
-  --slate-400: #475569;
-  --slate-300: #64748B;
-}
-
-[class*="recruiter-mode"] body {
-  background-image: none !important;
-}
-
 * {
-  @apply border-0 ring-0 outline-none rounded-none transition-all duration-300;
+  @apply border-0 ring-0 outline-none transition-all duration-300;
 }
 
 html {
@@ -36,81 +22,124 @@ html {
 }
 
 body {
-  @apply bg-obsidian-950 text-slate-400 font-sans;
-  background-image: radial-gradient(circle at 1px 1px, #1a1a1f 1px, transparent 0);
-  background-size: 32px 32px;
+  @apply bg-obsidian-950 text-slate-300 font-sans;
+  background-color: var(--obsidian-950);
+  /* Brutalist architectural grid */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center top;
 }
 
 ::selection {
   background-color: var(--signal-orange);
-  color: white;
+  color: #000;
+}
+
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @layer base {
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-mono text-white uppercase tracking-wider;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono uppercase;
+    letter-spacing: -0.03em;
   }
 }
 
 @layer components {
-
-  /* Technical Panel */
+  /* Brutalist Technical Panel */
   .tech-panel {
-    @apply border border-white/5 backdrop-blur-sm p-6 transition-colors duration-500;
-    background-color: var(--slate-deep);
+    @apply border border-white/20 p-8 transition-all duration-300 bg-obsidian-900/80 backdrop-blur-md relative;
+    border-radius: 0px; 
+    box-shadow: 8px 8px 0px 0px rgba(0, 240, 255, 0.15);
+  }
+
+  .tech-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--signal-orange);
+    border-left: 2px solid var(--signal-orange);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .tech-panel:hover {
     border-color: var(--signal-orange);
+    box-shadow: 8px 8px 0px 0px rgba(0, 240, 255, 0.5);
+    transform: translate(-4px, -4px);
+    background-color: rgba(5, 5, 10, 0.95);
   }
 
-  /* Signal Chip */
+  .tech-panel:hover::before {
+    opacity: 1;
+  }
+
+  /* Structural Chip — tag/badge element with industrial feel */
   .signal-chip {
-    @apply px-3 py-1 border text-[10px] font-mono uppercase tracking-widest transition-all duration-300 cursor-pointer;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    @apply px-4 py-1 border text-[10px] font-mono uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer inline-flex items-center;
+    border-radius: 0px;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
     color: var(--slate-300);
   }
 
-  .recruiter-mode .signal-chip {
-    background-color: var(--slate-deep);
-    border-color: var(--slate-300);
-    color: var(--obsidian-900);
-    font-weight: 700;
-  }
-
   .signal-chip:hover {
-    @apply bg-signal-orange text-white border-signal-orange;
+    @apply text-obsidian-950 font-bold;
+    background-color: var(--signal-orange);
+    border-color: var(--signal-orange);
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.5);
   }
 
-  /* Section Container */
+  /* Section Container — industrial spacing */
   .section-container {
-    @apply max-w-7xl mx-auto px-6 py-24 relative;
+    @apply w-full xl:max-w-[90rem] 2xl:max-w-[100rem] mx-auto px-6 md:px-12 py-32 relative border-x border-white/5 bg-obsidian-950/20 backdrop-blur-sm;
+  }
+
+  /* Accent Highlight Drop */
+  .accent-highlight {
+    background: linear-gradient(120deg, transparent 0%, var(--signal-orange) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 20%;
+    background-position: 0 100%;
+    color: white;
   }
 
   /* Vertical Label */
   .vertical-label {
-    @apply absolute -left-4 top-0 h-full flex items-center;
+    @apply absolute -left-6 top-12 h-full flex items-center tracking-[0.4em] text-[10px] uppercase font-mono text-signal-orange;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar — Sharp and minimal */
 ::-webkit-scrollbar {
   width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-obsidian-950;
+  @apply bg-obsidian-950 border-l border-white/10;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/10 hover:bg-signal-orange transition-colors;
+  @apply bg-white/20 transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--signal-orange);
 }
